@@ -40,22 +40,31 @@
             </div>
             <div class="disclaimer">
                 <p>THIS PRESENTATION AND DOCUMENT ARE THE PROPERTY OF MODERN MAHJONG AND ONLY FOR THE USE FOR EDUCATIONAL PURPOSES FOR OUR STUDENTS DURING THESE CLASSES.</p>
-                <button class="login-btn" onclick="window.netlifyIdentity.open()">Log In</button>
+                <button class="login-btn" onclick="showLoginForm()">Log In</button>
             </div>
         </footer>
     </div>
 
-    <!-- Netlify Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Simple Authentication -->
     <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/";
-                    });
-                }
-            });
+        function showLoginForm() {
+            const username = prompt("Username:");
+            const password = prompt("Password:");
+            
+            if (username === "admin" && password === "mahjong2024") {
+                alert("Welcome to MODERN Mahjong!");
+                // You can add protected content here
+                document.querySelector('.login-btn').textContent = "Logout";
+                document.querySelector('.login-btn').onclick = logout;
+            } else {
+                alert("Invalid credentials. Try username: admin, password: mahjong2024");
+            }
+        }
+        
+        function logout() {
+            alert("Logged out successfully!");
+            document.querySelector('.login-btn').textContent = "Log In";
+            document.querySelector('.login-btn').onclick = showLoginForm;
         }
     </script>
 </body>
