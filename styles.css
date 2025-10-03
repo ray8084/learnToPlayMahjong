@@ -144,6 +144,37 @@ body {
     line-height: 1.4;
 }
 
+/* Log In Button */
+.login-section {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.login-btn {
+    background-color: #d32f2f;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: #b71c1c;
+    transform: translateY(-1px);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+    background-color: #d32f2f;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
