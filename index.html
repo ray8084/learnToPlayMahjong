@@ -45,9 +45,12 @@
         </footer>
     </div>
 
-    <!-- Firebase Authentication -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <!-- Firebase Authentication v9+ -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+    </script>
     
     <div id="authModal" class="auth-modal" style="display: none;">
         <div class="auth-content">
@@ -78,25 +81,26 @@
         </div>
     </div>
 
-    <script>
+    <script type="module">
         // Firebase configuration
         const firebaseConfig = {
-            apiKey: "AIzaSyB1SaKTCsxx0uL1YPSAaox0U7oEmufeCDw",
+            apiKey: "AIzaSyBlSaKTCsxx0uLlYPSAaox0U7oEmufeCDw",
             authDomain: "learntoplaymahjong.firebaseapp.com",
             projectId: "learntoplaymahjong",
             storageBucket: "learntoplaymahjong.firebasestorage.app",
-            messagingSenderId: "68762442357",
-            appId: "1:68762442357:web:335ab6f3db8301f0a3b35c",
+            messagingSenderId: "687624422357",
+            appId: "1:687624422357:web:335ab6f3db8301f0a3b35c",
             measurementId: "G-XKGTXG06SS"
         };
         
         // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
         
         let currentUser = null;
         
-        function showLoginForm() {
+        // Make functions globally available
+        window.showLoginForm = function() {
             document.getElementById('authModal').style.display = 'block';
             document.getElementById('loginForm').style.display = 'block';
             document.getElementById('registerForm').style.display = 'none';
@@ -104,29 +108,31 @@
             document.getElementById('authTitle').textContent = 'Log In';
         }
         
-        function showRegisterForm() {
+        };
+        
+        window.showRegisterForm = function() {
             document.getElementById('loginForm').style.display = 'none';
             document.getElementById('registerForm').style.display = 'block';
             document.getElementById('resetForm').style.display = 'none';
             document.getElementById('authTitle').textContent = 'Sign Up';
-        }
+        };
         
-        function showResetForm() {
+        window.showResetForm = function() {
             document.getElementById('loginForm').style.display = 'none';
             document.getElementById('registerForm').style.display = 'none';
             document.getElementById('resetForm').style.display = 'block';
             document.getElementById('authTitle').textContent = 'Reset Password';
-        }
+        };
         
-        function closeAuthModal() {
+        window.closeAuthModal = function() {
             document.getElementById('authModal').style.display = 'none';
-        }
+        };
         
-        function login() {
+        window.login = function() {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            auth.signInWithEmailAndPassword(email, password)
+            signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     currentUser = userCredential.user;
                     alert('Welcome to MODERN Mahjong!');
@@ -136,14 +142,14 @@
                 .catch((error) => {
                     alert('Login failed: ' + error.message);
                 });
-        }
+        };
         
-        function register() {
+        window.register = function() {
             const name = document.getElementById('regName').value;
             const email = document.getElementById('regEmail').value;
             const password = document.getElementById('regPassword').value;
             
-            auth.createUserWithEmailAndPassword(email, password)
+            createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     currentUser = userCredential.user;
                     alert('Account created successfully!');
@@ -152,12 +158,12 @@
                 .catch((error) => {
                     alert('Registration failed: ' + error.message);
                 });
-        }
+        };
         
-        function resetPassword() {
+        window.resetPassword = function() {
             const email = document.getElementById('resetEmail').value;
             
-            auth.sendPasswordResetEmail(email)
+            sendPasswordResetEmail(auth, email)
                 .then(() => {
                     alert('Password reset email sent! Check your inbox.');
                     showLoginForm();
@@ -165,26 +171,26 @@
                 .catch((error) => {
                     alert('Reset failed: ' + error.message);
                 });
-        }
+        };
         
-        function logout() {
-            auth.signOut().then(() => {
+        window.logout = function() {
+            signOut(auth).then(() => {
                 currentUser = null;
                 alert('Logged out successfully!');
                 document.querySelector('.login-btn').textContent = 'Log In';
             });
-        }
+        };
         
         // Check if user is already logged in
-        auth.onAuthStateChanged((user) => {
+        onAuthStateChanged(auth, (user) => {
             if (user) {
                 currentUser = user;
                 document.querySelector('.login-btn').textContent = 'Logout';
-                document.querySelector('.login-btn').onclick = logout;
+                document.querySelector('.login-btn').onclick = window.logout;
             } else {
                 currentUser = null;
                 document.querySelector('.login-btn').textContent = 'Log In';
-                document.querySelector('.login-btn').onclick = showLoginForm;
+                document.querySelector('.login-btn').onclick = window.showLoginForm;
             }
         });
     </script>
