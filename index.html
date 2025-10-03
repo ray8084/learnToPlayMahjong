@@ -106,8 +106,6 @@
             document.getElementById('registerForm').style.display = 'none';
             document.getElementById('resetForm').style.display = 'none';
             document.getElementById('authTitle').textContent = 'Log In';
-        }
-        
         };
         
         window.showRegisterForm = function() {
@@ -137,7 +135,7 @@
                     currentUser = userCredential.user;
                     alert('Welcome to MODERN Mahjong!');
                     document.querySelector('.login-btn').textContent = 'Logout';
-                    closeAuthModal();
+                    window.closeAuthModal();
                 })
                 .catch((error) => {
                     alert('Login failed: ' + error.message);
@@ -153,7 +151,7 @@
                 .then((userCredential) => {
                     currentUser = userCredential.user;
                     alert('Account created successfully!');
-                    showLoginForm();
+                    window.showLoginForm();
                 })
                 .catch((error) => {
                     alert('Registration failed: ' + error.message);
@@ -166,7 +164,7 @@
             sendPasswordResetEmail(auth, email)
                 .then(() => {
                     alert('Password reset email sent! Check your inbox.');
-                    showLoginForm();
+                    window.showLoginForm();
                 })
                 .catch((error) => {
                     alert('Reset failed: ' + error.message);
@@ -186,11 +184,11 @@
             if (user) {
                 currentUser = user;
                 document.querySelector('.login-btn').textContent = 'Logout';
-                document.querySelector('.login-btn').onclick = window.logout;
+                document.querySelector('.login-btn').onclick = function() { window.logout(); };
             } else {
                 currentUser = null;
                 document.querySelector('.login-btn').textContent = 'Log In';
-                document.querySelector('.login-btn').onclick = window.showLoginForm;
+                document.querySelector('.login-btn').onclick = function() { window.showLoginForm(); };
             }
         });
     </script>
