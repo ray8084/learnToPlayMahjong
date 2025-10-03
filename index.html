@@ -45,27 +45,147 @@
         </footer>
     </div>
 
-    <!-- Simple Authentication -->
-    <script>
-        function showLoginForm() {
-            const username = prompt("Username:");
-            const password = prompt("Password:");
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    
+    <div id="authModal" class="auth-modal" style="display: none;">
+        <div class="auth-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <h2 id="authTitle">Log In</h2>
             
-            if (username === "admin" && password === "mahjong2024") {
-                alert("Welcome to MODERN Mahjong!");
-                // You can add protected content here
-                document.querySelector('.login-btn').textContent = "Logout";
-                document.querySelector('.login-btn').onclick = logout;
-            } else {
-                alert("Invalid credentials. Try username: admin, password: mahjong2024");
-            }
+            <div id="loginForm">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button onclick="login()">Log In</button>
+                <button onclick="showRegisterForm()">Sign Up</button>
+                <button onclick="showResetForm()">Forgot Password?</button>
+            </div>
+            
+            <div id="registerForm" style="display: none;">
+                <input type="text" id="regName" placeholder="Full Name" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <button onclick="register()">Sign Up</button>
+                <button onclick="showLoginForm()">Back to Login</button>
+            </div>
+            
+            <div id="resetForm" style="display: none;">
+                <input type="email" id="resetEmail" placeholder="Email" required>
+                <button onclick="resetPassword()">Send Reset Email</button>
+                <button onclick="showLoginForm()">Back to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Firebase configuration (you'll need to replace with your actual config)
+        const firebaseConfig = {
+            apiKey: "your-api-key",
+            authDomain: "your-project.firebaseapp.com",
+            projectId: "your-project-id",
+            storageBucket: "your-project.appspot.com",
+            messagingSenderId: "123456789",
+            appId: "your-app-id"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        
+        let currentUser = null;
+        
+        function showLoginForm() {
+            document.getElementById('authModal').style.display = 'block';
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('resetForm').style.display = 'none';
+            document.getElementById('authTitle').textContent = 'Log In';
+        }
+        
+        function showRegisterForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+            document.getElementById('resetForm').style.display = 'none';
+            document.getElementById('authTitle').textContent = 'Sign Up';
+        }
+        
+        function showResetForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('resetForm').style.display = 'block';
+            document.getElementById('authTitle').textContent = 'Reset Password';
+        }
+        
+        function closeAuthModal() {
+            document.getElementById('authModal').style.display = 'none';
+        }
+        
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    currentUser = userCredential.user;
+                    alert('Welcome to MODERN Mahjong!');
+                    document.querySelector('.login-btn').textContent = 'Logout';
+                    closeAuthModal();
+                })
+                .catch((error) => {
+                    alert('Login failed: ' + error.message);
+                });
+        }
+        
+        function register() {
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    currentUser = userCredential.user;
+                    alert('Account created successfully!');
+                    showLoginForm();
+                })
+                .catch((error) => {
+                    alert('Registration failed: ' + error.message);
+                });
+        }
+        
+        function resetPassword() {
+            const email = document.getElementById('resetEmail').value;
+            
+            auth.sendPasswordResetEmail(email)
+                .then(() => {
+                    alert('Password reset email sent! Check your inbox.');
+                    showLoginForm();
+                })
+                .catch((error) => {
+                    alert('Reset failed: ' + error.message);
+                });
         }
         
         function logout() {
-            alert("Logged out successfully!");
-            document.querySelector('.login-btn').textContent = "Log In";
-            document.querySelector('.login-btn').onclick = showLoginForm;
+            auth.signOut().then(() => {
+                currentUser = null;
+                alert('Logged out successfully!');
+                document.querySelector('.login-btn').textContent = 'Log In';
+            });
         }
+        
+        // Check if user is already logged in
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                currentUser = user;
+                document.querySelector('.login-btn').textContent = 'Logout';
+                document.querySelector('.login-btn').onclick = logout;
+            } else {
+                currentUser = null;
+                document.querySelector('.login-btn').textContent = 'Log In';
+                document.querySelector('.login-btn').onclick = showLoginForm;
+            }
+        });
     </script>
 </body>
 </html>
