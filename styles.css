@@ -1,0 +1,208 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.logo-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.logo-image {
+    max-height: 60px;
+    width: auto;
+    display: block;
+}
+
+.tagline {
+    font-size: 14px;
+    color: #000;
+}
+
+.series-info {
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+    margin-left: -200px;
+}
+
+.series-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.instruction {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #d32f2f;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* Main Image Section */
+.main-image {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.mahjong-tiles-image {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.community-info {
+    margin-bottom: 15px;
+}
+
+.community-info p {
+    font-size: 16px;
+    color: #000;
+}
+
+.social-media {
+    margin-bottom: 15px;
+}
+
+.social-media p {
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+}
+
+.contact {
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+}
+
+.disclaimer p {
+    font-size: 10px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .series-info {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .modern {
+        font-size: 20px;
+    }
+    
+    .mahjong {
+        font-size: 28px;
+    }
+    
+    .series-title {
+        font-size: 16px;
+    }
+    
+    .instruction {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .modern {
+        font-size: 18px;
+    }
+    
+    .mahjong {
+        font-size: 24px;
+    }
+    
+    .series-title {
+        font-size: 14px;
+    }
+    
+    .instruction {
+        font-size: 12px;
+    }
+    
+    .tagline {
+        font-size: 12px;
+    }
+}
