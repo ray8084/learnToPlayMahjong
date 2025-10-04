@@ -40,17 +40,14 @@
             </div>
             <div class="disclaimer">
                 <p>THIS PRESENTATION AND DOCUMENT ARE THE PROPERTY OF MODERN MAHJONG AND ONLY FOR THE USE FOR EDUCATIONAL PURPOSES FOR OUR STUDENTS DURING THESE CLASSES.</p>
-                <button class="login-btn" onclick="showLoginForm()">Log In</button>
+                <button class="login-btn" onclick="testLogin()">Log In</button>
             </div>
         </footer>
     </div>
 
-    <!-- Firebase Authentication v9+ -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
-    </script>
+    <!-- Firebase Authentication v8 -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     
     <div id="authModal" class="auth-modal" style="display: none;">
         <div class="auth-content">
@@ -81,7 +78,7 @@
         </div>
     </div>
 
-    <script type="module">
+    <script>
         // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyBlSaKTCsxx0uLlYPSAaox0U7oEmufeCDw",
@@ -94,10 +91,17 @@
         };
         
         // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        console.log('Firebase initialized successfully');
         
         let currentUser = null;
+        
+        // Test function to see if button works
+        window.testLogin = function() {
+            alert('Login button clicked!');
+            window.showLoginForm();
+        };
         
         // Make functions globally available
         window.showLoginForm = function() {
@@ -130,11 +134,11 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            signInWithEmailAndPassword(auth, email, password)
+            auth.signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     currentUser = userCredential.user;
                     alert('Welcome to MODERN Mahjong!');
-                    document.querySelector('.login-btn').textContent = 'Logout';
+                    document.querySelector('.login-btn').textContent = 'Log Out';
                     window.closeAuthModal();
                 })
                 .catch((error) => {
@@ -147,7 +151,7 @@
             const email = document.getElementById('regEmail').value;
             const password = document.getElementById('regPassword').value;
             
-            createUserWithEmailAndPassword(auth, email, password)
+            auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     currentUser = userCredential.user;
                     alert('Account created successfully!');
@@ -161,7 +165,7 @@
         window.resetPassword = function() {
             const email = document.getElementById('resetEmail').value;
             
-            sendPasswordResetEmail(auth, email)
+            auth.sendPasswordResetEmail(email)
                 .then(() => {
                     alert('Password reset email sent! Check your inbox.');
                     window.showLoginForm();
@@ -172,7 +176,7 @@
         };
         
         window.logout = function() {
-            signOut(auth).then(() => {
+            auth.signOut().then(() => {
                 currentUser = null;
                 alert('Logged out successfully!');
                 document.querySelector('.login-btn').textContent = 'Log In';
@@ -180,10 +184,10 @@
         };
         
         // Check if user is already logged in
-        onAuthStateChanged(auth, (user) => {
+        auth.onAuthStateChanged((user) => {
             if (user) {
                 currentUser = user;
-                document.querySelector('.login-btn').textContent = 'Logout';
+                document.querySelector('.login-btn').textContent = 'Log Out';
                 document.querySelector('.login-btn').onclick = function() { window.logout(); };
             } else {
                 currentUser = null;
