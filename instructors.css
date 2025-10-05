@@ -332,6 +332,11 @@
             .disclaimer p {
                 display: none;
             }
+            
+            .page-title {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
         }
 
 /* Footer buttons styling */
@@ -384,27 +389,34 @@
 }
 
 .brand-header {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .brand-title {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 5px;
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 0px;
 }
 
 .subtitle {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 22px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .brand-logo {
-    margin-bottom: 30px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.brand-logo .logo-image {
+    max-height: 50px;
+    width: auto;
 }
 
 .modern {
@@ -428,14 +440,14 @@
     font-size: 48px;
     color: #d32f2f;
     text-shadow: 2px 2px 0px #000000;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .lessons-list {
     text-align: left;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
