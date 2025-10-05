@@ -92,7 +92,10 @@
         <footer class="footer">
             <div class="disclaimer">
                 <p>THIS CONTENT IS THE PROPERTY OF MODERN MAHJONG AND ONLY FOR THE USE FOR EDUCATIONAL PURPOSES FOR OUR STUDENTS DURING THESE CLASSES.</p>
-                <button class="login-btn" onclick="nextPage()">Next</button>
+                <div class="footer-buttons">
+                    <button class="back-btn" onclick="goBack()">Back</button>
+                    <button class="login-btn" onclick="nextPage()">Next</button>
+                </div>
             </div>
         </footer>
     </div>
@@ -287,6 +290,12 @@
             }
         });
         
+        // Back page function
+        window.goBack = function() {
+            // Go back to main page
+            window.location.href = 'index.html';
+        };
+
         // Next page function (placeholder for now)
         window.nextPage = function() {
             // Placeholder function - will add navigation to next page later

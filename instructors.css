@@ -314,7 +314,49 @@
         margin-top: 20px;
     }
     
-    .contact-section p {
-        font-size: 13px;
-    }
+            .contact-section p {
+                font-size: 13px;
+            }
+            
+            .footer-buttons {
+                gap: 10px;
+            }
+            
+            .back-btn,
+            .login-btn {
+                width: 60px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+
+/* Footer buttons styling */
+.footer-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.back-btn {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 80px;
+}
+
+.back-btn:hover {
+    background-color: #333333;
+    transform: translateY(-1px);
+}
+
+.login-btn {
+    width: 80px;
 }
