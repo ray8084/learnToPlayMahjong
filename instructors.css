@@ -335,12 +335,8 @@
             }
             
             .page-title {
-                font-size: 16px;
+                font-size: 20px;
                 margin-bottom: 20px;
-            }
-            
-            .lesson-plan-page .page-title {
-                font-size: 24px;
             }
         }
 
