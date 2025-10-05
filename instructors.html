@@ -92,7 +92,7 @@
         <footer class="footer">
             <div class="disclaimer">
                 <p>THIS CONTENT IS THE PROPERTY OF MODERN MAHJONG AND ONLY FOR THE USE FOR EDUCATIONAL PURPOSES FOR OUR STUDENTS DURING THESE CLASSES.</p>
-                <button class="login-btn" onclick="testLogin()">Log In</button>
+                <button class="login-btn" onclick="nextPage()">Next</button>
             </div>
         </footer>
     </div>
@@ -151,11 +151,6 @@
         
         let currentUser = null;
         
-        // Test function to see if button works
-        window.testLogin = function() {
-            alert('Login button clicked!');
-            window.showLoginForm();
-        };
         
         window.showLoginForm = function() {
             document.getElementById('authModal').style.display = 'block';
@@ -292,13 +287,18 @@
             }
         });
         
+        // Next page function (placeholder for now)
+        window.nextPage = function() {
+            // Placeholder function - will add navigation to next page later
+            alert('Next page coming soon!');
+        };
+        
         // Check if user is already logged in
         auth.onAuthStateChanged((user) => {
             if (user) {
                 currentUser = user;
                 document.getElementById('userEmailDisplay').textContent = user.email;
-                document.querySelector('.login-btn').textContent = 'Log Out';
-                document.querySelector('.login-btn').onclick = function() { window.logout(); };
+                // Keep the Next button as is
             } else {
                 // Redirect to main page if not logged in
                 window.location.href = 'index.html';
