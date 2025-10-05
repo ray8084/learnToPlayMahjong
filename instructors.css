@@ -318,9 +318,17 @@
                 font-size: 13px;
             }
             
+            .footer {
+                text-align: right !important;
+                display: flex !important;
+                justify-content: flex-end !important;
+            }
+            
             .footer-buttons {
                 gap: 10px;
-                justify-content: flex-end;
+                justify-content: flex-end !important;
+                margin-left: auto !important;
+                margin-right: 15px;
             }
             
             .back-btn,
@@ -335,7 +343,7 @@
             }
             
             .page-title {
-                font-size: 16px;
+                font-size: 22px !important;
                 margin-bottom: 20px;
             }
         }
@@ -397,7 +405,7 @@
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 20px;
-    color: #666;
+    color: #333;
     margin-bottom: 0px;
 }
 
