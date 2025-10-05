@@ -328,6 +328,10 @@
                 padding: 6px 12px;
                 font-size: 12px;
             }
+            
+            .disclaimer p {
+                display: none;
+            }
         }
 
 /* Footer buttons styling */
@@ -359,4 +363,115 @@
 
 .login-btn {
     width: 80px;
+}
+
+/* Standardize footer height across all pages */
+.disclaimer {
+    min-height: 80px;
+    height: auto;
+}
+
+/* Lesson Plan page specific styles */
+.lesson-plan-main {
+    margin: 0;
+    padding: 20px 30px 0 30px;
+}
+
+.lesson-plan-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.brand-header {
+    margin-bottom: 40px;
+}
+
+.brand-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.brand-logo {
+    margin-bottom: 30px;
+}
+
+.modern {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #999;
+    font-weight: 400;
+}
+
+.mahjong {
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    color: #d32f2f;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.page-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #d32f2f;
+    text-shadow: 2px 2px 0px #000000;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.lessons-list {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.lesson-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #d32f2f;
+}
+
+.lesson-item.current {
+    background-color: #fff5f5;
+    border-left-color: #d32f2f;
+}
+
+.lesson-item h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.lesson-item.current h3 {
+    color: #d32f2f;
+}
+
+.lesson-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    font-style: italic;
+}
+
+.lesson-item.current p {
+    color: #d32f2f;
 }

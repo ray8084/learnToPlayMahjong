@@ -232,6 +232,8 @@ body {
     left: 0;
     right: 0;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    min-height: 80px;
+    height: auto;
 }
 
 .disclaimer p {

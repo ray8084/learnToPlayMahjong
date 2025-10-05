@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet the Instructors - MODERN Mahjong</title>
+    <title>Lesson Plan - MODERN Mahjong</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="instructors.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -34,57 +34,37 @@
         </div>
 
         <!-- Main Content -->
-        <section class="instructors-main">
-            <div class="instructors-container">
-                <h1 class="page-title">MEET THE INSTRUCTORS AND CO-AUTHORS</h1>
-                <div class="title-line"></div>
+        <section class="lesson-plan-main">
+            <div class="lesson-plan-container">
+                <div class="brand-header">
+                    <h1 class="brand-title">Learn to Play by</h1>
+                    <h2 class="subtitle">National Mah Jongg League Rules</h2>
+                    <div class="brand-logo">
+                        <span class="modern">MODERN</span>
+                        <span class="mahjong">Mahjong</span>
+                    </div>
+                </div>
                 
-                <!-- Dara Mosher Collins -->
-                <div class="instructor-section">
-                    <div class="instructor-content">
-                        <div class="instructor-text">
-                            <h2>Dara Mosher Collins - Mah Jongg and Canasta co-author and instructor</h2>
-                            <p>Dara Mosher Collins grew up in New York where she was exposed to Mah Jongg through her mother and her mother's friends. After taking a break from law to raise her daughters, Dara co-created a thriving Mah Jongg business with Donna Kassman.</p>
-                            
-                            <p>Together, they run ModernMahjong.com, an online retail business, and host in-person events and "Modern Mahjong Zoom Talks" with various experts. Dara is also the co-creator of "MahjongCommunity," an interactive Facebook group with 88,000 members, where she shares rules, strategy, and moderates discussions.</p>
-                            
-                            <p>Dara is the co-author of the "Visual Companion Guide for American Mah Jongg," available on Amazon, and co-authored "Modern American Canasta: The Complete Guide" with Donna Miller-Small.</p>
-                            
-                            <p>She is a guest speaker and teacher for organizations like Hadassah, JCCs, Country Clubs, Community Centers, and AARP, covering Mahjong and Canasta strategy. She will be co-hosting a Modern American Canasta Convention in NYC in October 2025 and a Miraval retreat in August 2026.</p>
-                        </div>
-                        <div class="instructor-image">
-                            <img src="dara.png" alt="Dara Mosher Collins" class="instructor-photo">
-                        </div>
+                <h1 class="page-title">LESSON PLAN</h1>
+                
+                <div class="lessons-list">
+                    <div class="lesson-item current">
+                        <h3>Lesson 1: Introduction to the Game</h3>
+                        <p>(Review of Tiles and the National Mah Jongg League Card)</p>
+                    </div>
+                    
+                    <div class="lesson-item">
+                        <h3>Lesson 2: Review Lesson, Game Play, the Charleston and Online Game Play</h3>
+                    </div>
+                    
+                    <div class="lesson-item">
+                        <h3>Lesson 3: More Details on Game Play and FAQs</h3>
+                    </div>
+                    
+                    <div class="lesson-item">
+                        <h3>Lesson 4: Review, Guidance for Picking a Hand and Online Game Play</h3>
                     </div>
                 </div>
-
-                <!-- Donna Kassman -->
-                <div class="instructor-section">
-                    <div class="instructor-content donna-content">
-                        <div class="instructor-text">
-                            <h2>Donna Kassman - Mah Jongg co-author and instructor</h2>
-                            <p>Donna Kassman is a native South Floridian, born in Miami Beach. She attended American University and the University of Miami Law School, then practiced commercial real estate law for twenty years.</p>
-                            
-                            <p>After taking time off to raise her two young boys, during which she learned Mahjong, Donna started the Mahjong business with Dara Mosher Collins and chose not to return to law.</p>
-                            
-                            <p>Together, they run ModernMahjong.com, an online retail business, and host in-person events and "Modern Mahjong Zoom Talks." Replays of their talks are available on YouTube.com/ModernMahjong.</p>
-                        </div>
-                        <div class="instructor-image">
-                            <img src="donna.png" alt="Donna Kassman" class="instructor-photo">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Joint Efforts -->
-                <div class="joint-efforts">
-                    <p>Together, Dara and Donna host events, teach Mah Jongg, and organize fundraisers across South Florida and beyond. Their fundraising efforts have raised over $168,000 for the Alzheimer's Association and thousands for other charities. They appeared discussing Mah Jongg with Savannah and Jenna on the Today Show plaza.</p>
-                </div>
-
-                <!-- Contact Information Section -->
-                <div class="contact-section">
-                    <p>For more information, please email us at ModernAmericanCanasta@gmail.com or ModernMahjong@gmail.com.</p>
-                </div>
-
             </div>
         </section>
 
@@ -292,13 +272,14 @@
         
         // Back page function
         window.goBack = function() {
-            // Go back to main page
-            window.location.href = 'index.html';
+            // Go back to instructors page
+            window.location.href = 'instructors.html';
         };
 
-        // Next page function - navigate to lesson plan
+        // Next page function (placeholder for now)
         window.nextPage = function() {
-            window.location.href = 'lesson-plan.html';
+            // Placeholder function - will add navigation to next page later
+            alert('Next page coming soon!');
         };
         
         // Check if user is already logged in
