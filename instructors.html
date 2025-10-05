@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Instructors - MODERN Mahjong</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="instructors.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Main Content -->
+        <section class="instructors-main">
+            <div class="instructors-container">
+                <h1 class="page-title">MEET THE INSTRUCTORS AND CO-AUTHORS</h1>
+                <div class="title-line"></div>
+                
+                <!-- Dara Mosher Collins -->
+                <div class="instructor-section">
+                    <div class="instructor-content">
+                        <div class="instructor-text">
+                            <h2>Dara Mosher Collins - Mah Jongg and Canasta co-author and instructor</h2>
+                            <p>Dara Mosher Collins grew up in New York where she was exposed to Mah Jongg through her mother and her mother's friends. After taking a break from law to raise her daughters, Dara co-created a thriving Mah Jongg business with Donna Kassman.</p>
+                            
+                            <p>Together, they run ModernMahjong.com, an online retail business, and host in-person events and "Modern Mahjong Zoom Talks" with various experts. Dara is also the co-creator of "MahjongCommunity," an interactive Facebook group with 88,000 members, where she shares rules, strategy, and moderates discussions.</p>
+                            
+                            <p>Dara is the co-author of the "Visual Companion Guide for American Mah Jongg," available on Amazon, and co-authored "Modern American Canasta: The Complete Guide" with Donna Miller-Small.</p>
+                            
+                            <p>She is a guest speaker and teacher for organizations like Hadassah, JCCs, Country Clubs, Community Centers, and AARP, covering Mahjong and Canasta strategy. She will be co-hosting a Modern American Canasta Convention in NYC in October 2025 and a Miraval retreat in August 2026.</p>
+                        </div>
+                        <div class="instructor-image">
+                            <img src="dara.png" alt="Dara Mosher Collins" class="instructor-photo">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donna Kassman -->
+                <div class="instructor-section">
+                    <div class="instructor-content donna-content">
+                        <div class="instructor-image">
+                            <img src="donna.png" alt="Donna Kassman" class="instructor-photo">
+                        </div>
+                        <div class="instructor-text">
+                            <h2>Donna Kassman - Mah Jongg co-author and instructor</h2>
+                            <p>Donna Kassman is a native South Floridian, born in Miami Beach. She attended American University and the University of Miami Law School, then practiced commercial real estate law for twenty years.</p>
+                            
+                            <p>After taking time off to raise her two young boys, during which she learned Mahjong, Donna started the Mahjong business with Dara Mosher Collins and chose not to return to law.</p>
+                            
+                            <p>Together, they run ModernMahjong.com, an online retail business, and host in-person events and "Modern Mahjong Zoom Talks." Replays of their talks are available on YouTube.com/ModernMahjong.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Joint Efforts -->
+                <div class="joint-efforts">
+                    <p>Together, Dara and Donna host events, teach Mah Jongg, and organize fundraisers across South Florida and beyond. Their fundraising efforts have raised over $168,000 for the Alzheimer's Association and thousands for other charities. They appeared discussing Mah Jongg with Savannah and Jenna on the Today Show plaza.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="disclaimer">
+                <p>THIS CONTENT IS THE PROPERTY OF MODERN MAHJONG AND ONLY FOR THE USE FOR EDUCATIONAL PURPOSES FOR OUR STUDENTS DURING THESE CLASSES.</p>
+                <button class="login-btn" onclick="testLogin()">Log In</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    
+    <div id="authModal" class="auth-modal" style="display: none;">
+        <div class="auth-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <h2 id="authTitle">Log In</h2>
+            
+            <div id="loginForm">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button onclick="login()">Log In</button>
+                <button onclick="showRegisterForm()">Sign Up</button>
+                <button onclick="showResetForm()">Forgot Password?</button>
+            </div>
+            
+            <div id="registerForm" style="display: none;">
+                <input type="text" id="regName" placeholder="Full Name" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <button onclick="register()">Sign Up</button>
+                <button onclick="showLoginForm()">Back to Login</button>
+            </div>
+            
+            <div id="resetForm" style="display: none;">
+                <input type="email" id="resetEmail" placeholder="Email" required>
+                <button onclick="resetPassword()">Send Reset Email</button>
+                <button onclick="showLoginForm()">Back to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBlSaKTCsxx0uLlYPSAaox0U7oEmufeCDw",
+            authDomain: "learntoplaymahjong.firebaseapp.com",
+            projectId: "learntoplaymahjong",
+            storageBucket: "learntoplaymahjong.firebasestorage.app",
+            messagingSenderId: "687624422357",
+            appId: "1:687624422357:web:335ab6f3db8301f0a3b35c",
+            measurementId: "G-XKGTXG06SS"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        console.log('Firebase initialized successfully');
+        console.log('Firebase config:', firebaseConfig);
+        console.log('Auth object:', auth);
+        
+        let currentUser = null;
+        
+        // Test function to see if button works
+        window.testLogin = function() {
+            alert('Login button clicked!');
+            window.showLoginForm();
+        };
+        
+        window.showLoginForm = function() {
+            document.getElementById('authModal').style.display = 'block';
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('resetForm').style.display = 'none';
+            document.getElementById('authTitle').textContent = 'Log In';
+        };
+        
+        window.showRegisterForm = function() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+            document.getElementById('resetForm').style.display = 'none';
+            document.getElementById('authTitle').textContent = 'Sign Up';
+        };
+        
+        window.showResetForm = function() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('resetForm').style.display = 'block';
+            document.getElementById('authTitle').textContent = 'Reset Password';
+        };
+        
+        window.closeAuthModal = function() {
+            document.getElementById('authModal').style.display = 'none';
+        };
+        
+        window.login = function() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    currentUser = userCredential.user;
+                    alert('Welcome to Learn To Play Mahjong by Modern Mahjong!');
+                    document.querySelector('.login-btn').textContent = 'Log Out';
+                    window.closeAuthModal();
+                })
+                .catch((error) => {
+                    let friendlyMessage = 'Login failed. Please check your email and password.';
+                    
+                    if (error.code === 'auth/invalid-login-credentials') {
+                        friendlyMessage = 'Invalid email or password. Please try again.';
+                    } else if (error.code === 'auth/user-not-found') {
+                        friendlyMessage = 'No account found with this email address.';
+                    } else if (error.code === 'auth/wrong-password') {
+                        friendlyMessage = 'Incorrect password. Please try again.';
+                    } else if (error.code === 'auth/invalid-email') {
+                        friendlyMessage = 'Please enter a valid email address.';
+                    } else if (error.code === 'auth/too-many-requests') {
+                        friendlyMessage = 'Too many failed attempts. Please try again later.';
+                    }
+                    
+                    alert(friendlyMessage);
+                });
+        };
+        
+        window.register = function() {
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    currentUser = userCredential.user;
+                    alert('Account created successfully!');
+                    window.showLoginForm();
+                })
+                .catch((error) => {
+                    alert('Registration failed: ' + error.message);
+                });
+        };
+        
+        window.resetPassword = function() {
+            const email = document.getElementById('resetEmail').value;
+            console.log('Reset password attempt for email:', email);
+            
+            if (!email) {
+                alert('Please enter an email address.');
+                return;
+            }
+            
+            console.log('Sending password reset email...');
+            console.log('Firebase auth object:', auth);
+            console.log('Email being sent to:', email);
+            
+            auth.sendPasswordResetEmail(email)
+                .then((result) => {
+                    console.log('Password reset email sent successfully');
+                    console.log('Success result:', result);
+                    alert('Password reset email sent! Check your inbox.');
+                    window.showLoginForm();
+                })
+                .catch((error) => {
+                    console.error('Password reset error:', error);
+                    let friendlyMessage = 'Password reset failed. Please try again.';
+                    
+                    if (error.code === 'auth/user-not-found') {
+                        friendlyMessage = 'No account found with this email address.';
+                    } else if (error.code === 'auth/invalid-email') {
+                        friendlyMessage = 'Please enter a valid email address.';
+                    } else if (error.code === 'auth/too-many-requests') {
+                        friendlyMessage = 'Too many reset attempts. Please try again later.';
+                    }
+                    
+                    alert(friendlyMessage);
+                });
+        };
+        
+        window.logout = function() {
+            auth.signOut().then(() => {
+                currentUser = null;
+                alert('Logged out successfully!');
+                document.querySelector('.login-btn').textContent = 'Log In';
+                // Redirect to main page after logout
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000);
+            });
+        };
+        
+        // Check if user is already logged in
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                currentUser = user;
+                document.querySelector('.login-btn').textContent = 'Log Out';
+                document.querySelector('.login-btn').onclick = function() { window.logout(); };
+            } else {
+                currentUser = null;
+                document.querySelector('.login-btn').textContent = 'Log In';
+                document.querySelector('.login-btn').onclick = function() { window.showLoginForm(); };
+            }
+        });
+    </script>
+</body>
+</html>
