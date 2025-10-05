@@ -320,6 +320,7 @@
             
             .footer-buttons {
                 gap: 10px;
+                justify-content: flex-end;
             }
             
             .back-btn,
@@ -334,8 +335,12 @@
             }
             
             .page-title {
-                font-size: 18px;
+                font-size: 16px;
                 margin-bottom: 20px;
+            }
+            
+            .lesson-plan-page .page-title {
+                font-size: 24px;
             }
         }
 
