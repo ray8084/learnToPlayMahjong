@@ -132,10 +132,11 @@
     align-items: flex-start;
     gap: 40px;
     margin-bottom: 30px;
+    flex-direction: row-reverse;
 }
 
 .instructor-content.donna-content {
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
 .instructor-text {
@@ -186,6 +187,22 @@
     margin: 0;
 }
 
+.contact-section {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.contact-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -216,13 +233,13 @@
     }
     
     .instructor-content {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 20px;
         align-items: center;
     }
     
     .instructor-content.donna-content {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     
     .instructor-image {
@@ -249,6 +266,15 @@
     }
     
     .joint-efforts p {
+        font-size: 14px;
+    }
+    
+    .contact-section {
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+    .contact-section p {
         font-size: 14px;
     }
 }
@@ -280,6 +306,15 @@
     }
     
     .joint-efforts p {
+        font-size: 13px;
+    }
+    
+    .contact-section {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .contact-section p {
         font-size: 13px;
     }
 }

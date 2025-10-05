@@ -61,9 +61,6 @@
                 <!-- Donna Kassman -->
                 <div class="instructor-section">
                     <div class="instructor-content donna-content">
-                        <div class="instructor-image">
-                            <img src="donna.png" alt="Donna Kassman" class="instructor-photo">
-                        </div>
                         <div class="instructor-text">
                             <h2>Donna Kassman - Mah Jongg co-author and instructor</h2>
                             <p>Donna Kassman is a native South Floridian, born in Miami Beach. She attended American University and the University of Miami Law School, then practiced commercial real estate law for twenty years.</p>
@@ -72,12 +69,20 @@
                             
                             <p>Together, they run ModernMahjong.com, an online retail business, and host in-person events and "Modern Mahjong Zoom Talks." Replays of their talks are available on YouTube.com/ModernMahjong.</p>
                         </div>
+                        <div class="instructor-image">
+                            <img src="donna.png" alt="Donna Kassman" class="instructor-photo">
+                        </div>
                     </div>
                 </div>
 
                 <!-- Joint Efforts -->
                 <div class="joint-efforts">
                     <p>Together, Dara and Donna host events, teach Mah Jongg, and organize fundraisers across South Florida and beyond. Their fundraising efforts have raised over $168,000 for the Alzheimer's Association and thousands for other charities. They appeared discussing Mah Jongg with Savannah and Jenna on the Today Show plaza.</p>
+                </div>
+
+                <!-- Contact Information Section -->
+                <div class="contact-section">
+                    <p>For more information, please email us at ModernAmericanCanasta@gmail.com or ModernMahjong@gmail.com.</p>
                 </div>
 
             </div>
@@ -295,9 +300,8 @@
                 document.querySelector('.login-btn').textContent = 'Log Out';
                 document.querySelector('.login-btn').onclick = function() { window.logout(); };
             } else {
-                currentUser = null;
-                document.querySelector('.login-btn').textContent = 'Log In';
-                document.querySelector('.login-btn').onclick = function() { window.showLoginForm(); };
+                // Redirect to main page if not logged in
+                window.location.href = 'index.html';
             }
         });
     </script>
