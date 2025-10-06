@@ -88,17 +88,10 @@
         <footer class="footer">
             <div class="button-container">
                 <div class="audio-player">
-                    <audio id="audioPlayer" controls>
+                    <audio controls>
                         <source src="ElevenLabs_2025-10-06T15_23_56_Rachel_pre_sp100_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <div class="volume-control">
-                        <svg class="volume-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                        </svg>
-                        <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider">
-                    </div>
                 </div>
                 <div class="footer-buttons">
                     <button class="back-btn" onclick="goBack()">Back</button>
@@ -321,43 +314,6 @@
             }
         });
 
-        // Volume control functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const audio = document.getElementById('audioPlayer');
-            const volumeSlider = document.getElementById('volumeSlider');
-            const volumeIcon = document.querySelector('.volume-icon');
-
-            // Set initial volume
-            audio.volume = 0.5;
-
-            // Update volume when slider changes
-            volumeSlider.addEventListener('input', function() {
-                const volume = this.value / 100;
-                audio.volume = volume;
-                
-                // Update volume icon based on volume level
-                updateVolumeIcon(volume);
-            });
-
-            // Sync slider with audio volume changes (if user uses native controls)
-            audio.addEventListener('volumechange', function() {
-                volumeSlider.value = Math.round(audio.volume * 100);
-                
-                // Update volume icon
-                updateVolumeIcon(audio.volume);
-            });
-
-            // Function to update volume icon
-            function updateVolumeIcon(volume) {
-                if (volume === 0) {
-                    volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>';
-                } else if (volume < 0.5) {
-                    volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>';
-                } else {
-                    volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>';
-                }
-            }
-        });
     </script>
 </body>
 </html>
