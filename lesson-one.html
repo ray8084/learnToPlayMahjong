@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome - Modern Mahjong</title>
+    <title>Lesson One - Modern Mahjong</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="instructors.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,11 +98,12 @@
         };
         
         window.nextPage = function() {
-            window.location.href = 'lesson-one.html';
+            // Placeholder for next lesson
+            alert('This will be the next lesson when ready');
         };
         
         window.previousPage = function() {
-            window.location.href = 'before-we-start.html';
+            window.location.href = 'welcome.html';
         };
         
         // Close dropdown when clicking outside
@@ -116,7 +117,7 @@
         };
     </script>
 </head>
-<body class="welcome-page">
+<body class="lesson-one-page">
     <!-- User Menu -->
     <div class="user-menu">
         <div class="user-icon" onclick="toggleUserMenu()">
@@ -141,22 +142,17 @@
         </div>
     </div>
 
-    <div class="welcome-main">
-        <div class="welcome-content">
-            <div class="welcome-text">
-                <div class="welcome-title-image">
-                    <img src="welcome.png" alt="Welcome" class="welcome-title-img">
-                </div>
-                <p class="welcome-subtitle">to the wonderful game of mahjong</p>
-                <ul class="welcome-bullets">
-                    <li>Mahjong originated in China.</li>
-                    <li>Joseph Babcock, an American business man living in China, is credited with introducing the game to North America.</li>
-                    <li>There are over 40 styles of mahjong played through the world.</li>
-                    <li>For our lessons and graphics, we teach according to the official rules of the National Mah Jongg League (NMJL).</li>
-                </ul>
-            </div>
-            <div class="welcome-image">
-                <img src="table.png" alt="Mahjong Table" class="mahjong-board">
+    <div class="lesson-one-main">
+        <div class="lesson-one-container">
+            <h1 class="lesson-one-title">THE FORMATION OF THE NMJL</h1>
+            <ul class="lesson-one-bullets">
+                <li>This topic is discussed in length by Annelise Heinz, the author of <em>MAHJONG: A Chinese Game and the Making of Modern American Culture</em>. Heinz describes how in 1937, nearly 400 female delegates, many who were Jewish, gathered to hear from Viola Cecil, a Jewish woman and the first president of the newly formed National Mah Jongg League, to standardize the rules of the game.</li>
+                <li>The formation the League by these Jewish women was the most influential force to standardize and promote the game in the US.</li>
+                <li>Throughout this series, we teach according to the NMJL rules and the current annual Card that they created for 2025, the League's 88th year!</li>
+            </ul>
+            
+            <div class="fine-print">
+                <p>THIS PRESENTATION AND DOCUMENT ARE THE PROPERTY OF MODERN MAHJONG AND ONLY FOR THE USE FOR EDUCATIONAL PURPOSES FOR OUR STUDENTS.</p>
             </div>
         </div>
     </div>
