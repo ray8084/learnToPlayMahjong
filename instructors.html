@@ -88,10 +88,16 @@
         <footer class="footer">
             <div class="button-container">
                 <div class="audio-player">
-                    <audio controls>
+                    <audio id="audioPlayer" controls class="desktop-audio">
                         <source src="ElevenLabs_2025-10-06T15_23_56_Rachel_pre_sp100_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
+                    <audio id="mobileAudioPlayer" preload="metadata" class="mobile-audio">
+                        <source src="ElevenLabs_2025-10-06T15_23_56_Rachel_pre_sp100_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <button id="playPauseBtn" class="play-pause-btn">▶</button>
+                    <span id="timeDisplay" class="time-display">0:00</span>
                 </div>
                 <div class="footer-buttons">
                     <button class="back-btn" onclick="goBack()">Back</button>
@@ -311,6 +317,57 @@
             } else {
                 // Redirect to main page if not logged in
                 window.location.href = 'index.html';
+            }
+        });
+
+        // Minimal audio player functionality for mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileAudio = document.getElementById('mobileAudioPlayer');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const timeDisplay = document.getElementById('timeDisplay');
+
+            // Only initialize if elements exist (mobile)
+            if (mobileAudio && playPauseBtn && timeDisplay) {
+                // Format time as MM:SS
+                function formatTime(seconds) {
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return mins + ':' + (secs < 10 ? '0' : '') + secs;
+                }
+
+                // Update time display
+                function updateTime() {
+                    timeDisplay.textContent = formatTime(mobileAudio.currentTime);
+                }
+
+                // Play/pause functionality
+                playPauseBtn.addEventListener('click', function() {
+                    if (mobileAudio.paused) {
+                        mobileAudio.play();
+                        playPauseBtn.classList.remove('playing');
+                        playPauseBtn.classList.add('playing');
+                    } else {
+                        mobileAudio.pause();
+                        playPauseBtn.classList.remove('playing');
+                    }
+                });
+
+                // Update button when audio state changes
+                mobileAudio.addEventListener('play', function() {
+                    playPauseBtn.classList.add('playing');
+                });
+
+                mobileAudio.addEventListener('pause', function() {
+                    playPauseBtn.classList.remove('playing');
+                });
+
+                // Update time display
+                mobileAudio.addEventListener('timeupdate', updateTime);
+
+                // Initialize time display
+                mobileAudio.addEventListener('loadedmetadata', function() {
+                    timeDisplay.textContent = formatTime(mobileAudio.duration);
+                });
             }
         });
 
