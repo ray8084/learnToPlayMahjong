@@ -517,10 +517,104 @@
             align-items: center;
         }
 
+        /* Before We Start page mobile footer alignment */
+        .before-we-start-page .footer {
+            text-align: right !important;
+            display: flex !important;
+            justify-content: flex-end !important;
+        }
+        
+        .before-we-start-page .footer-buttons {
+            gap: 10px;
+            justify-content: flex-end !important;
+            margin-left: auto !important;
+            margin-right: 15px;
+        }
+        
+        .before-we-start-page .button-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 20px 30px 20px;
+            background-color: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            min-height: 60px;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
 .footer-buttons {
     display: flex;
     gap: 15px;
     justify-content: flex-end;
+}
+
+/* Before We Start page specific styles */
+.before-we-start-main {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.before-we-start-page .page-title {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+    text-transform: none !important;
+}
+
+.content-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.disclaimer-list {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.disclaimer-list li {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.disclaimer-list strong {
+    font-weight: 700;
+}
+
+/* Mobile styles for Before We Start page */
+@media (max-width: 768px) {
+    .before-we-start-main {
+        padding: 20px 15px;
+    }
+    
+    .before-we-start-page .page-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .content-section p,
+    .disclaimer-list {
+        font-size: 14px;
+    }
+    
+    .disclaimer-list {
+        padding-left: 15px;
+    }
 }
 
 .back-btn {
