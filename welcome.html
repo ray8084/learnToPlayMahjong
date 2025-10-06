@@ -3,243 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome - Learn To Play Mahjong</title>
+    <title>Welcome - Modern Mahjong</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="instructors.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body class="welcome-page">
-    <div class="container">
-        <!-- User Account Menu -->
-        <div class="user-menu">
-            <div class="user-icon" onclick="toggleUserMenu()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                </svg>
-            </div>
-            <div class="user-dropdown" id="userDropdown">
-                <div class="user-email" id="userEmailDisplay">user@example.com</div>
-                <button onclick="logout()">Log Out</button>
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <main class="welcome-main">
-            <div class="welcome-content">
-                <div class="welcome-text">
-                    <div class="welcome-title-image">
-                        <img src="welcome.png" alt="Welcome" class="welcome-title-img">
-                    </div>
-                    <p class="welcome-subtitle">to the wonderful game of mahjong.</p>
-                    
-                    <ul class="welcome-bullets">
-                        <li>Mahjong originated in China.</li>
-                        <li>Joseph Babcock, an American business man living in China, is credited with introducing the game to North America.</li>
-                        <li>There are over 40 styles of mahjong played through the world.</li>
-                        <li>For our lessons and graphics, we teach according to the official rules of the National Mah Jongg League (NMJL).</li>
-                    </ul>
-                </div>
-                
-                <div class="welcome-image">
-                    <img src="table.png" alt="Mahjong Table" class="mahjong-board">
-                </div>
-            </div>
-        </main>
-
-        <!-- Footer Section -->
-        <footer class="footer">
-            <div class="fine-print">
-                <p>THIS PRESENTATION AND ALL TEXT AND IMAGES ARE THE PROPERTY OF MODERN MAHJONG FOR THE USE FOR EDUCATIONAL PURPOSES FOR OUR STUDENTS DURING THESE CLASSES AND NOT TO BE SHARED AND/OR COPIED IN FULL OR PART WITHOUT OUR PRIOR AUTHORIZATION. ALL RIGHTS RESERVED.</p>
-            </div>
-            <div class="button-container">
-                <div class="footer-buttons">
-                    <button class="back-btn" onclick="goBack()">Back</button>
-                    <button class="login-btn" onclick="nextPage()">Next</button>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Firebase Authentication -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <div id="authModal" class="auth-modal" style="display: none;">
-        <div class="auth-content">
-            <span class="close" onclick="closeAuthModal()">&times;</span>
-            <h2 id="authTitle">Log In</h2>
-            
-            <div id="loginForm">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <button onclick="login()">Log In</button>
-                <button onclick="showRegisterForm()">Sign Up</button>
-                <button onclick="showResetForm()">Forgot Password?</button>
-            </div>
-            
-            <div id="registerForm" style="display: none;">
-                <input type="text" id="regName" placeholder="Full Name" required>
-                <input type="email" id="regEmail" placeholder="Email" required>
-                <input type="password" id="regPassword" placeholder="Password" required>
-                <button onclick="register()">Sign Up</button>
-                <button onclick="showLoginForm()">Back to Login</button>
-            </div>
-            
-            <div id="resetForm" style="display: none;">
-                <input type="email" id="resetEmail" placeholder="Email" required>
-                <button onclick="resetPassword()">Reset Password</button>
-                <button onclick="showLoginForm()">Back to Login</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Firebase configuration
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        
         const firebaseConfig = {
             apiKey: "AIzaSyBlSaKTCsxx0uLlYPSAaox0U7oEmufeCDw",
             authDomain: "learntoplaymahjong.firebaseapp.com",
             projectId: "learntoplaymahjong",
             storageBucket: "learntoplaymahjong.firebasestorage.app",
             messagingSenderId: "687624422357",
-            appId: "1:687624422357:web:your-app-id"
+            appId: "1:687624422357:web:1234567890abcdef"
         };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-
-        // Global variables
-        let currentUser = null;
-
-        // Authentication functions
+        
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        
+        console.log('Firebase initialized successfully');
+        console.log('Firebase config:', firebaseConfig);
+        console.log('Auth object:', auth);
+        
+        let authChecked = false;
+        
+        onAuthStateChanged(auth, (user) => {
+            if (!authChecked) {
+                setTimeout(() => {
+                    authChecked = true;
+                    if (!user) {
+                        console.log('No authenticated user, redirecting to home page');
+                        window.location.href = 'index.html';
+                    } else {
+                        console.log('User authenticated:', user.email);
+                    }
+                }, 500);
+            }
+        });
+        
         window.showLoginForm = function() {
-            document.getElementById('loginForm').style.display = 'block';
-            document.getElementById('registerForm').style.display = 'none';
-            document.getElementById('resetForm').style.display = 'none';
-            document.getElementById('authTitle').textContent = 'Log In';
-            document.getElementById('authModal').style.display = 'flex';
+            const modal = document.getElementById('authModal');
+            modal.style.display = 'block';
         };
-
-        window.showRegisterForm = function() {
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('registerForm').style.display = 'block';
-            document.getElementById('resetForm').style.display = 'none';
-            document.getElementById('authTitle').textContent = 'Sign Up';
-            document.getElementById('authModal').style.display = 'flex';
+        
+        window.closeModal = function() {
+            const modal = document.getElementById('authModal');
+            modal.style.display = 'none';
         };
-
-        window.showResetForm = function() {
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('registerForm').style.display = 'none';
-            document.getElementById('resetForm').style.display = 'block';
-            document.getElementById('authTitle').textContent = 'Reset Password';
-            document.getElementById('authModal').style.display = 'flex';
-        };
-
-        window.closeAuthModal = function() {
-            document.getElementById('authModal').style.display = 'none';
-        };
-
-        window.login = function() {
+        
+        window.login = async function() {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-
-            auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    currentUser = userCredential.user;
-                    document.getElementById('authModal').style.display = 'none';
-                    alert('Welcome to Learn To Play Mahjong by Modern Mahjong');
-                })
-                .catch((error) => {
-                    const errorMessage = error.message;
-                    if (errorMessage.includes('wrong-password')) {
-                        alert('Incorrect password. Please try again.');
-                    } else {
-                        alert('Login failed: ' + errorMessage);
-                    }
-                });
-        };
-
-        window.register = function() {
-            const name = document.getElementById('regName').value;
-            const email = document.getElementById('regEmail').value;
-            const password = document.getElementById('regPassword').value;
-
-            auth.createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    currentUser = userCredential.user;
-                    document.getElementById('authModal').style.display = 'none';
-                    alert('Welcome to Learn To Play Mahjong by Modern Mahjong');
-                })
-                .catch((error) => {
-                    alert('Registration failed: ' + error.message);
-                });
-        };
-
-        window.resetPassword = function() {
-            const email = document.getElementById('resetEmail').value;
             
-            console.log('Reset password attempt for email:', email);
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+                document.getElementById('authModal').style.display = 'none';
+                console.log('Login successful');
+            } catch (error) {
+                alert('Login failed: ' + error.message);
+            }
+        };
+        
+        window.signup = async function() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
             
-            auth.sendPasswordResetEmail(email)
-                .then(() => {
-                    console.log('Sending password reset email...');
-                    alert('Password reset email sent! Please check your inbox.');
-                    console.log('Password reset email sent successfully');
-                })
-                .catch((error) => {
-                    console.error('Password reset error:', error);
-                    alert('Password reset failed: ' + error.message);
-                });
+            try {
+                await createUserWithEmailAndPassword(auth, email, password);
+                document.getElementById('authModal').style.display = 'none';
+                console.log('Signup successful');
+            } catch (error) {
+                alert('Signup failed: ' + error.message);
+            }
         };
-
-        window.logout = function() {
-            auth.signOut().then(() => {
-                currentUser = null;
-                alert('Logged out successfully');
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 1000);
-            }).catch((error) => {
-                alert('Logout failed: ' + error.message);
-            });
+        
+        window.logout = async function() {
+            try {
+                await signOut(auth);
+                window.location.href = 'index.html';
+            } catch (error) {
+                console.error('Logout failed:', error);
+            }
         };
-
-        // Navigation functions
-        window.goBack = function() {
-            window.location.href = 'before-we-start.html';
-        };
-
-        window.nextPage = function() {
-            // Placeholder for next page - can be updated later
-            alert('Next page coming soon!');
-        };
-
-        // Toggle user menu
+        
         window.toggleUserMenu = function() {
             const dropdown = document.getElementById('userDropdown');
             dropdown.classList.toggle('show');
         };
-
-        // Check if user is already logged in
-        let authChecked = false;
         
-        auth.onAuthStateChanged((user) => {
-            if (authChecked) return; // Prevent multiple redirects
-            authChecked = true;
-            
-            if (user) {
-                currentUser = user;
-                document.getElementById('userEmailDisplay').textContent = user.email;
-                console.log('User authenticated:', user.email);
-            } else {
-                console.log('No user found, redirecting to home page');
-                // Add a small delay to prevent immediate redirect
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 500);
+        window.nextPage = function() {
+            window.location.href = 'welcome.html';
+        };
+        
+        window.previousPage = function() {
+            window.location.href = 'before-we-start.html';
+        };
+        
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.user-icon')) {
+                const dropdown = document.getElementById('userDropdown');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
             }
-        });
+        };
     </script>
+</head>
+<body class="welcome-page">
+    <!-- User Menu -->
+    <div class="user-menu">
+        <div class="user-icon" onclick="toggleUserMenu()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </div>
+        <div class="user-dropdown" id="userDropdown">
+            <div class="user-info">
+                <span id="userEmail">User</span>
+            </div>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item" onclick="logout()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16,17 21,12 16,7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <div class="welcome-main">
+        <div class="welcome-content">
+            <div class="welcome-text">
+                <div class="welcome-title-image">
+                    <img src="welcome.png" alt="Welcome" class="welcome-title-img">
+                </div>
+                <p class="welcome-subtitle">to the wonderful game of mahjong</p>
+                <ul class="welcome-bullets">
+                    <li>Mahjong is a tile-based game that originated in China</li>
+                    <li>It combines elements of skill, strategy, and luck</li>
+                    <li>Players collect sets of tiles to form winning hands</li>
+                    <li>The game promotes social interaction and mental agility</li>
+                </ul>
+            </div>
+            <div class="welcome-image">
+                <img src="table.png" alt="Mahjong Table" class="mahjong-board">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="button-container">
+            <div class="footer-buttons">
+                <button class="back-btn" onclick="previousPage()">Back</button>
+                <button class="login-btn" onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div id="authModal" class="auth-modal" style="display: none;">
+        <div class="auth-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Login / Sign Up</h2>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <button onclick="signup()">Sign Up</button>
+        </div>
+    </div>
 </body>
 </html>

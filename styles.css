@@ -158,12 +158,12 @@ body {
 .instruction {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     color: #d32f2f;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1.2;
-    white-space: nowrap;
+    white-space: normal;
     margin-left: -80px;
 }
 
@@ -408,7 +408,7 @@ body {
     }
     
     .instruction {
-        font-size: 14px;
+        font-size: 18px;
         white-space: normal;
         text-align: center;
         margin-left: 0;
@@ -457,7 +457,7 @@ body {
     }
     
     .instruction {
-        font-size: 12px;
+        font-size: 18px;
         white-space: normal;
         text-align: center;
         margin-left: 0;
