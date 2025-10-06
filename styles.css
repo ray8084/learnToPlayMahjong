@@ -233,7 +233,7 @@ body {
     text-align: center;
 }
 
-.disclaimer {
+.button-container {
     margin-top: 0px;
     padding: 15px 30px 30px 30px;
     display: flex;
@@ -404,11 +404,18 @@ body {
     
     .series-title {
         font-size: 16px;
+        text-align: center;
     }
     
     .instruction {
         font-size: 14px;
         white-space: normal;
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .button-container {
+        padding: 15px 20px 30px 20px;
     }
 }
 
@@ -433,8 +440,8 @@ body {
         font-size: 24px;
     }
     
-    .disclaimer {
-        padding: 12px 15px;
+    .button-container {
+        padding: 12px 15px 30px 15px;
         gap: 10px;
     }
     
@@ -446,11 +453,14 @@ body {
     
     .series-title {
         font-size: 14px;
+        text-align: center;
     }
     
     .instruction {
         font-size: 12px;
         white-space: normal;
+        text-align: center;
+        margin-left: 0;
     }
     
     .tagline {
