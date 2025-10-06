@@ -242,6 +242,11 @@
         font-size: 24px;
     }
     
+    /* Lesson plan page mobile styles */
+    .lesson-plan-page .page-title {
+        font-size: 24px;
+    }
+    
     .title-line {
         width: 200px;
     }
@@ -299,6 +304,11 @@
     }
     
     .page-title {
+        font-size: 20px;
+    }
+    
+    /* Lesson plan page mobile styles */
+    .lesson-plan-page .page-title {
         font-size: 20px;
     }
     
@@ -753,36 +763,36 @@
         font-size: 14px;
     }
     
-    /* Lesson One mobile styles */
-    .lesson-one-title {
+    /* Formation mobile styles */
+    .formation-title {
         font-size: 24px;
         letter-spacing: 2px;
         margin-bottom: 20px;
         margin-top: -15px;
     }
     
-    .lesson-one-bullets li {
+    .formation-bullets li {
         font-size: 16px;
         margin-bottom: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .lesson-one-title {
+    .formation-title {
         font-size: 20px;
         letter-spacing: 2px;
         margin-bottom: 15px;
         margin-top: -15px;
     }
     
-    .lesson-one-bullets li {
+    .formation-bullets li {
         font-size: 14px;
         margin-bottom: 12px;
     }
 }
 
-/* Lesson One page specific styles */
-.lesson-one-main {
+/* Formation page specific styles */
+.formation-main {
     margin: 0;
     padding: 40px 30px 0 30px;
     text-align: center;
@@ -792,12 +802,12 @@
     justify-content: center;
 }
 
-.lesson-one-container {
+.formation-container {
     max-width: 800px;
     margin: 0 auto;
 }
 
-.lesson-one-title {
+.formation-title {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 36px;
@@ -810,7 +820,7 @@
     text-shadow: 2px 2px 0px #000000;
 }
 
-.lesson-one-bullets {
+.formation-bullets {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -818,7 +828,7 @@
     text-align: left;
 }
 
-.lesson-one-bullets li {
+.formation-bullets li {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -829,7 +839,7 @@
     line-height: 1.6;
 }
 
-.lesson-one-bullets li::before {
+.formation-bullets li::before {
     content: "•";
     color: #000;
     font-weight: bold;
@@ -856,21 +866,21 @@
     letter-spacing: 0.5px;
 }
 
-/* Lesson One page footer alignment */
-.lesson-one-page .footer {
+/* Formation page footer alignment */
+.formation-page .footer {
     text-align: right !important;
     display: flex !important;
     justify-content: flex-end !important;
 }
 
-.lesson-one-page .footer-buttons {
+.formation-page .footer-buttons {
     gap: 10px;
     justify-content: flex-end !important;
     margin-left: auto !important;
     margin-right: 15px;
 }
 
-.lesson-one-page .button-container {
+.formation-page .button-container {
     position: fixed;
     bottom: 0;
     left: 0;
