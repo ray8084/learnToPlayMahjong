@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Before We Get Started - Learn To Play Mahjong</title>
+    <title>Welcome - Learn To Play Mahjong</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="instructors.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Frasa+Text:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="before-we-start-page">
+<body class="welcome-page">
     <div class="container">
         <!-- User Account Menu -->
         <div class="user-menu">
@@ -24,21 +24,25 @@
         </div>
 
         <!-- Main Content -->
-        <main class="before-we-start-main">
-            <h1 class="page-title"><strong>Before we get started . . .</strong></h1>
-            
-            <div class="content-section">
-                <p>Thank you for joining us for this Online series! We want to take a quick moment to share something important.</p>
+        <main class="welcome-main">
+            <div class="welcome-content">
+                <div class="welcome-text">
+                    <div class="welcome-title-image">
+                        <img src="welcome.png" alt="Welcome" class="welcome-title-img">
+                    </div>
+                    <p class="welcome-subtitle">to the wonderful game of mahjong.</p>
+                    
+                    <ul class="welcome-bullets">
+                        <li>Mahjong originated in China.</li>
+                        <li>Joseph Babcock, an American business man living in China, is credited with introducing the game to North America.</li>
+                        <li>There are over 40 styles of mahjong played through the world.</li>
+                        <li>For our lessons and graphics, we teach according to the official rules of the National Mah Jongg League (NMJL).</li>
+                    </ul>
+                </div>
                 
-                <p>It is our belief that it is important for players and teachers to have reliable resources for rules and strategies with explanations based on official rules.</p>
-                
-                <p>We love creating and sharing information to help players learn rules and improve their game.</p>
-                
-                <ul class="disclaimer-list">
-                    <li>We created all of the materials, graphics, and content being shared in this series based on official rules.</li>
-                    <li>Resources and all images shared are only for use during this series and <strong>may not be used</strong> for teaching, commercial purposes, shared (digitally, physically, or otherwise redistributed) or any other unauthorized use. All of our content is protected by copyright, with all rights reserved.</li>
-                    <li>As you will see while watching, we put a lot of time and effort into developing this content and appreciate your respect for our work - this includes graphics as well as certain phrases and explanations we coined to explain concepts.</li>
-                </ul>
+                <div class="welcome-image">
+                    <img src="table.png" alt="Mahjong Table" class="mahjong-board">
+                </div>
             </div>
         </main>
 
@@ -203,11 +207,12 @@
 
         // Navigation functions
         window.goBack = function() {
-            window.location.href = 'lesson-plan.html';
+            window.location.href = 'before-we-start.html';
         };
 
         window.nextPage = function() {
-            window.location.href = 'welcome.html';
+            // Placeholder for next page - can be updated later
+            alert('Next page coming soon!');
         };
 
         // Toggle user menu
