@@ -218,21 +218,33 @@ body {
     font-weight: 400;
 }
 
-.disclaimer {
+.fine-print {
     margin-top: 20px;
     padding: 15px 30px;
-    border-top: 1px solid #ccc;
+    background-color: white;
+}
+
+.fine-print p {
+    font-size: 10px;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+}
+
+.disclaimer {
+    margin-top: 0px;
+    padding: 15px 30px 30px 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    gap: 20px;
     background-color: white;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    min-height: 80px;
+    min-height: 60px;
     height: auto;
 }
 
@@ -443,4 +455,5 @@ body {
     .tagline {
         font-size: 12px;
     }
+}
 }

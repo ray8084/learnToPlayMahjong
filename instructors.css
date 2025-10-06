@@ -379,10 +379,26 @@
     width: 80px;
 }
 
+/* Fine print styling */
+.fine-print {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: white;
+}
+
+.fine-print p {
+    font-size: 10px;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+}
+
 /* Standardize footer height across all pages */
 .disclaimer {
-    min-height: 80px;
+    min-height: 60px;
     height: auto;
+    padding-bottom: 30px;
 }
 
 /* Lesson Plan page specific styles */
