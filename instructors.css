@@ -775,6 +775,19 @@
         font-size: 16px;
         margin-bottom: 15px;
     }
+    
+    /* Resurgence mobile styles */
+    .resurgence-title {
+        font-size: 24px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        margin-top: -15px;
+    }
+    
+    .resurgence-bullets li {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -786,6 +799,18 @@
     }
     
     .formation-bullets li {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .resurgence-title {
+        font-size: 20px;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        margin-top: -15px;
+    }
+    
+    .resurgence-bullets li {
         font-size: 14px;
         margin-bottom: 12px;
     }
@@ -881,6 +906,92 @@
 }
 
 .formation-page .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px 30px 20px;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    min-height: 60px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Resurgence page specific styles */
+.resurgence-main {
+    margin: 0;
+    padding: 40px 30px 0 30px;
+    text-align: center;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resurgence-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.resurgence-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #d32f2f;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.resurgence-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 800px;
+    text-align: left;
+}
+
+.resurgence-bullets li {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.resurgence-bullets li::before {
+    content: "•";
+    color: #000;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+}
+
+/* Resurgence page footer alignment */
+.resurgence-page .footer {
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.resurgence-page .footer-buttons {
+    gap: 10px;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+    margin-right: 15px;
+}
+
+.resurgence-page .button-container {
     position: fixed;
     bottom: 0;
     left: 0;
