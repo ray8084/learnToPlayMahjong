@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annual Card - Learn To Play Mahjong</title>
+    <title>152 Tiles - Learn To Play Mahjong</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="instructors.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Frasa+Text:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -58,11 +58,11 @@
         };
         
         window.nextPage = function() {
-            window.location.href = '152tiles.html';
+            window.location.href = 'index.html';
         };
         
         window.goBack = function() {
-            window.location.href = 'TheObject.html';
+            window.location.href = 'AnnualCard.html';
         };
         
         // Close dropdown when clicking outside
@@ -75,7 +75,7 @@
         });
     </script>
 </head>
-<body class="annual-card-page">
+<body class="tiles-152-page">
     <div class="container">
         <!-- User Account Menu -->
         <div class="user-menu">
@@ -100,24 +100,13 @@
             </div>
         </div>
 
-        <!-- Main Content -->
-        <main class="annual-card-main">
-            <h1 class="annual-card-title">THE ANNUAL CARD</h1>
-            
-            <div class="annual-card-content">
-                <ul class="annual-card-bullets">
-                    <li>Each year, the NMJL issues a new card at the end of March, beginning of April.</li>
-                    <li>The Card has three panels which use abbreviations for the tiles and create combinations of 14 tiles that form a winning hand, Mah Jongg.</li>
-                    <li>We understand looking at the Card can be overwhelming. We will go through and explain which tile each symbol on the Card represents.</li>
-                </ul>
-            </div>
+        <!-- Main Content - Full Image -->
+        <main class="tiles-152-main">
+            <img src="152tiles.png" alt="152 Tiles" class="tiles-152-image">
         </main>
 
         <!-- Footer Section -->
         <footer class="footer">
-            <div class="fine-print">
-                <p>THE CONTENT ON THIS WEBSITE AND ALL TEXT AND IMAGES ARE THE PROPERTY OF MODERN MAHJONG AND ONLY FOR THE USE FOR EDUCATIONAL PURPOSES FOR OUR STUDENTS DURING THIS COURSE.</p>
-            </div>
             <div class="button-container">
                 <div class="footer-buttons">
                     <button class="back-btn" onclick="goBack()">Back</button>
