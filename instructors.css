@@ -1780,7 +1780,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 15px 30px 30px 30px;
+    padding: 15px 20px 30px 20px;
     background-color: white;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     min-height: 60px;
@@ -1788,4 +1788,147 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* The Object Page Styles */
+.the-object-page {
+    background-color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.the-object-main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.the-object-page .two-column-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.the-object-page .left-column {
+    flex: 0 0 20%;
+    min-width: 200px;
+}
+
+.the-object-page .right-column {
+    flex: 0 0 80%;
+}
+
+.the-object-page .column-header {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #d32f2f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    margin-top: -15px;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.the-object-page .card-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.the-object-page .card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.the-object-page .image-369-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.the-object-page .image-369 {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.the-object-page .text-content {
+    font-family: 'Inter', sans-serif;
+}
+
+.the-object-page .object-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.the-object-page .object-bullets li {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.the-object-page .object-bullets li:before {
+    content: "•";
+    color: #d32f2f;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.the-object-page .footer {
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.the-object-page .footer-buttons {
+    gap: 10px;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+    margin-right: 15px;
+}
+
+.the-object-page .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px 30px 20px;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    min-height: 60px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .the-object-page .two-column-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .the-object-page .left-column,
+    .the-object-page .right-column {
+        flex: 1;
+    }
+    
+    .the-object-main {
+        padding: 20px 10px;
+    }
+    
+    .the-object-page .button-container {
+        padding: 15px 20px 30px 20px;
+    }
 }
