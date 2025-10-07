@@ -788,6 +788,50 @@
         font-size: 16px;
         margin-bottom: 15px;
     }
+    
+    /* Pop Culture tablet styles */
+    .popculture-main {
+        padding: 30px 15px 0 15px;
+    }
+    
+    .popculture-container {
+        padding: 0 10px;
+    }
+    
+    .popculture-header {
+        margin-bottom: 20px;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .pop-image {
+        height: 100px;
+    }
+    
+    .popculture-title {
+        font-size: 36px;
+        letter-spacing: 2px;
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .amy-image {
+        height: 100px;
+    }
+    
+    .popculture-bullets li {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .movie-list li {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -813,6 +857,50 @@
     .resurgence-bullets li {
         font-size: 14px;
         margin-bottom: 12px;
+    }
+    
+    /* Pop Culture mobile styles */
+    .popculture-main {
+        padding: 20px 10px 0 10px;
+    }
+    
+    .popculture-container {
+        padding: 0 5px;
+    }
+    
+    .popculture-header {
+        margin-bottom: 15px;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .pop-image {
+        height: 70px;
+    }
+    
+    .popculture-title {
+        font-size: 28px;
+        letter-spacing: 2px;
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    
+    .amy-image {
+        height: 70px;
+    }
+    
+    .popculture-bullets li {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .movie-list li {
+        font-size: 12px;
+        margin-bottom: 5px;
     }
 }
 
@@ -906,6 +994,142 @@
 }
 
 .formation-page .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px 30px 20px;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    min-height: 60px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Pop Culture page specific styles */
+.popculture-main {
+    margin: 0;
+    padding: 40px 30px 0 30px;
+    text-align: center;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popculture-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.popculture-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.pop-image {
+    height: 180px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.popculture-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 54px;
+    color: #d32f2f;
+    margin: 0;
+    margin-right: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.amy-image {
+    height: 180px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.popculture-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.popculture-bullets li {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.popculture-bullets li::before {
+    content: "•";
+    color: #000;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+}
+
+.movie-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.movie-list li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.movie-list li::before {
+    content: "◦";
+    color: #666;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+}
+
+/* Pop Culture page footer alignment */
+.popculture-page .footer {
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.popculture-page .footer-buttons {
+    gap: 10px;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+    margin-right: 15px;
+}
+
+.popculture-page .button-container {
     position: fixed;
     bottom: 0;
     left: 0;
