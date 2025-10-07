@@ -6,6 +6,7 @@
     <title>Welcome - Modern Mahjong</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="instructors.css">
+    <link rel="stylesheet" href="welcome.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -42,6 +43,8 @@
                         window.location.href = 'index.html';
                     } else {
                         console.log('User authenticated:', user.email);
+                        // Display user email in dropdown
+                        document.getElementById('userEmailDisplay').textContent = user.email;
                     }
                 }, 500);
             }
@@ -106,14 +109,13 @@
         };
         
         // Close dropdown when clicking outside
-        window.onclick = function(event) {
-            if (!event.target.matches('.user-icon')) {
-                const dropdown = document.getElementById('userDropdown');
-                if (dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
+        document.addEventListener('click', function(event) {
+            const userMenu = document.querySelector('.user-menu');
+            const dropdown = document.getElementById('userDropdown');
+            if (!userMenu.contains(event.target)) {
+                dropdown.classList.remove('show');
             }
-        };
+        });
     </script>
 </head>
 <body class="welcome-page">

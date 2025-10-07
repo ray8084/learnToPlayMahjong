@@ -25,19 +25,19 @@
 }
 
 .user-dropdown {
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    min-width: 200px;
-    display: none;
-    overflow: hidden;
+    position: fixed !important;
+    top: 60px !important;
+    right: 20px !important;
+    background: white !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    min-width: 200px !important;
+    display: none !important;
+    overflow: hidden !important;
 }
 
 .user-dropdown.show {
-    display: block;
+    display: block !important;
 }
 
 .user-info {
@@ -231,7 +231,9 @@
     }
     
     .user-dropdown {
-        min-width: 180px;
+        min-width: 180px !important;
+        top: 55px !important;
+        right: 15px !important;
     }
     
     .instructors-main {

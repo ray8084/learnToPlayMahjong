@@ -117,14 +117,13 @@
         };
         
         // Close dropdown when clicking outside
-        window.onclick = function(event) {
-            if (!event.target.matches('.user-icon')) {
-                const dropdown = document.getElementById('userDropdown');
-                if (dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
+        document.addEventListener('click', function(event) {
+            const userMenu = document.querySelector('.user-menu');
+            const dropdown = document.getElementById('userDropdown');
+            if (!userMenu.contains(event.target)) {
+                dropdown.classList.remove('show');
             }
-        };
+        });
     </script>
 </head>
 <body class="julia-page">
