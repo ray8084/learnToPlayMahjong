@@ -1722,3 +1722,38 @@
 .lesson-item.current p {
     color: #d32f2f;
 }
+
+/* We Love It Page Styles */
+.we-love-it-page {
+    background-color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.we-love-it-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 40px 20px;
+}
+
+.image-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.weloveit-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .we-love-it-main {
+        padding: 20px 10px;
+        min-height: 60vh;
+    }
+}
