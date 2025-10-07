@@ -823,6 +823,18 @@
         height: 100px;
     }
     
+    .popculture-content {
+        gap: 20px;
+    }
+    
+    .popculture-bullets {
+        min-width: 120px;
+    }
+    
+    .sarah-image {
+        height: 200px;
+    }
+    
     .popculture-bullets li {
         font-size: 16px;
         margin-bottom: 15px;
@@ -891,6 +903,22 @@
     
     .amy-image {
         height: 70px;
+    }
+    
+    .popculture-content {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .popculture-bullets {
+        min-width: 100%;
+        order: 1;
+    }
+    
+    .sarah-image {
+        height: 160px;
+        order: 2;
     }
     
     .popculture-bullets li {
@@ -1060,14 +1088,30 @@
     flex-shrink: 0;
 }
 
+.popculture-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
 .popculture-bullets {
     list-style: none;
     padding: 0;
     margin: 0;
-    max-width: 100%;
+    flex: 1;
+    min-width: 150px;
     text-align: left;
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+.sarah-image {
+    height: 280px;
+    width: auto;
+    flex-shrink: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .popculture-bullets li {
