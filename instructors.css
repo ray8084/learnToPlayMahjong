@@ -1756,6 +1756,16 @@
         padding: 20px 10px;
         min-height: 60vh;
     }
+    
+    .we-love-it-page .button-container {
+        padding: 15px 20px 30px 20px;
+    }
+}
+
+.we-love-it-page .footer {
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
 }
 
 .we-love-it-page .footer-buttons {
@@ -1770,7 +1780,12 @@
     bottom: 0;
     left: 0;
     right: 0;
+    padding: 15px 30px 30px 30px;
     background-color: white;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    padding: 15px 30px 30px 30px;
+    min-height: 60px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
