@@ -65,18 +65,44 @@
             window.location.href = 'TheObject.html';
         };
         
+        // Hamburger menu toggle function
+        window.toggleHamburgerMenu = function() {
+            const dropdown = document.getElementById('hamburgerDropdown');
+            dropdown.classList.toggle('show');
+        };
+
         // Close dropdown when clicking outside
         document.addEventListener('click', function(event) {
             const userMenu = document.querySelector('.user-menu');
-            const dropdown = document.getElementById('userDropdown');
+            const userDropdown = document.getElementById('userDropdown');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const hamburgerDropdown = document.getElementById('hamburgerDropdown');
+            
             if (!userMenu.contains(event.target)) {
-                dropdown.classList.remove('show');
+                userDropdown.classList.remove('show');
+            }
+            
+            if (!hamburgerMenu.contains(event.target)) {
+                hamburgerDropdown.classList.remove('show');
             }
         });
     </script>
 </head>
 <body class="annual-card-page">
     <div class="container">
+        <!-- Hamburger Menu -->
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleHamburgerMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="hamburger-dropdown" id="hamburgerDropdown">
+                <a href="index.html">Home</a>
+                <a href="152tiles.html">Tiles</a>
+            </div>
+        </div>
+
         <!-- User Account Menu -->
         <div class="user-menu">
             <div class="user-icon" onclick="toggleUserMenu()">
