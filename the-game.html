@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julia Roberts - Modern Mahjong</title>
+    <title>The Game - Modern Mahjong</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="instructors.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,11 +98,12 @@
         };
         
         window.nextPage = function() {
-            window.location.href = 'the-game.html';
+            // Placeholder for next lesson
+            alert('This will be the next lesson when ready');
         };
         
         window.previousPage = function() {
-            window.location.href = 'popculture.html';
+            window.location.href = 'julia.html';
         };
         
         // Close dropdown when clicking outside
@@ -116,7 +117,7 @@
         };
     </script>
 </head>
-<body class="julia-page">
+<body class="the-game-page">
     <!-- User Menu -->
     <div class="user-menu">
         <div class="user-icon" onclick="toggleUserMenu()">
@@ -140,19 +141,24 @@
         </div>
     </div>
 
-    <div class="julia-main">
-        <div class="julia-container">
-            <h1 class="julia-title">A FABULOUS DESCRIPTION OF THE GAME BY JULIA ROBERTS</h1>
-            
-            <div class="julia-content">
-                <!-- Left Column: Julia Roberts Image -->
-                <div class="left-column julia-column">
-                    <img src="julia.png" alt="Julia Roberts" class="julia-image">
+    <div class="the-game-main">
+        <div class="the-game-container">
+            <div class="the-game-content">
+                <!-- Left Column: Title and The Game Image -->
+                <div class="left-column">
+                    <h1 class="the-game-title">The Game</h1>
+                    <img src="The Game.png" alt="The Game" class="the-game-image">
                 </div>
                 
-                <!-- Right Column: Chaos Graphic -->
-                <div class="right-column chaos-column">
-                    <img src="chaos.png" alt="Order Out of Chaos" class="chaos-image">
+                <!-- Right Column: Bullet Points and 1937 Image -->
+                <div class="right-column">
+                    <ul class="the-game-bullets">
+                        <li>Mah Jongg is a usually a four player game.</li>
+                        <li>Players sit across from each other.</li>
+                        <li>Players start with 13 tiles and one player known as East starts with 14 tiles.</li>
+                        <li>Players pick a tile and then discard a tile they don't need.</li>
+                    </ul>
+                    <img src="1937.png" alt="1937" class="game-1937-image">
                 </div>
             </div>
             
