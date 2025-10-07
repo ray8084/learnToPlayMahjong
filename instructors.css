@@ -1810,12 +1810,12 @@
 }
 
 .the-object-page .left-column {
-    flex: 0 0 20%;
-    min-width: 200px;
+    flex: 0 0 25%;
+    min-width: 250px;
 }
 
 .the-object-page .right-column {
-    flex: 0 0 80%;
+    flex: 0 0 75%;
 }
 
 .the-object-page .column-header {
@@ -1829,7 +1829,7 @@
     margin-top: -15px;
     text-align: center;
     white-space: normal;
-    word-wrap: break-word;
+    word-break: keep-all;
     text-shadow: 2px 2px 0px #000000;
 }
 
