@@ -821,18 +821,40 @@
     
     .amy-image {
         height: 100px;
+        margin-left: 15px;
     }
     
     .popculture-content {
-        gap: 20px;
+        gap: 10px;
     }
     
     .popculture-bullets {
         min-width: 120px;
+        flex: 0.5;
+    }
+    
+    .images-column {
+        flex: 0.5;
+        gap: 15px;
+        align-items: flex-start;
     }
     
     .sarah-image {
-        height: 200px;
+        height: 240px;
+        width: 100px;
+        margin-left: 100px;
+    }
+    
+    .joyluck-image {
+        height: 280px;
+        width: 200px;
+        margin-top: -35px;
+    }
+    
+    .amy-image {
+        height: 100px;
+        width: auto;
+        margin-left: 15px;
     }
     
     .popculture-bullets li {
@@ -903,6 +925,7 @@
     
     .amy-image {
         height: 70px;
+        margin-left: 10px;
     }
     
     .popculture-content {
@@ -916,9 +939,29 @@
         order: 1;
     }
     
-    .sarah-image {
-        height: 160px;
+    .images-column {
+        gap: 10px;
         order: 2;
+        align-items: center;
+    }
+    
+    .joyluck-image {
+        height: 220px;
+        width: 140px;
+        margin-left: 0;
+        margin-top: -25px;
+    }
+    
+    .sarah-image {
+        height: 180px;
+        width: 70px;
+        margin-left: 75px;
+    }
+    
+    .amy-image {
+        height: 70px;
+        width: auto;
+        margin-left: 10px;
     }
     
     .popculture-bullets li {
@@ -1086,12 +1129,13 @@
     height: 180px;
     width: auto;
     flex-shrink: 0;
+    margin-left: 20px;
 }
 
 .popculture-content {
     display: flex;
     align-items: flex-start;
-    gap: 30px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
@@ -1099,19 +1143,33 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    flex: 1;
+    flex: 0.5;
     min-width: 150px;
     text-align: left;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
+.images-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0.5;
+    align-items: flex-start;
+}
+
 .sarah-image {
-    height: 280px;
-    width: auto;
-    flex-shrink: 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 320px;
+    width: 180px;
+    object-fit: contain;
+    margin-left: 150px;
+}
+
+.joyluck-image {
+    height: 400px;
+    width: 360px;
+    object-fit: contain;
+    margin-top: -50px;
 }
 
 .popculture-bullets li {
