@@ -176,7 +176,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
 }
 
@@ -231,7 +231,7 @@ body {
 
 /* Main Image Section */
 .main-image {
-    margin: 30px 0;
+    margin: 10px 0;
     text-align: center;
 }
 
@@ -445,6 +445,26 @@ body {
         padding: 20px 20px 0 20px;
     }
     
+    /* Index page specific - no extra spacing */
+    .index-page .header {
+        margin-bottom: 0px !important;
+        padding-top: 50px !important;
+    }
+    
+    .index-page .main-image {
+        margin-top: 0px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .index-page .series-info {
+        margin-top: 5px !important;
+        margin-bottom: 0px !important;
+    }
+    
+    .index-page .instruction {
+        margin-bottom: 0px !important;
+    }
+    
     .header {
         flex-direction: column;
         text-align: center;
@@ -476,9 +496,6 @@ body {
         margin-left: 0;
     }
     
-    .main-image {
-        padding-top: 100px; /* Push main image down on mobile to avoid hamburger menu */
-    }
     
     .button-container {
         padding: 15px 20px 30px 20px;
