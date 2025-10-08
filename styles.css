@@ -476,6 +476,10 @@ body {
         margin-left: 0;
     }
     
+    .main-image {
+        padding-top: 100px; /* Push main image down on mobile to avoid hamburger menu */
+    }
+    
     .button-container {
         padding: 15px 20px 30px 20px;
     }

@@ -2068,6 +2068,13 @@
     margin: 0;
 }
 
+/* Mobile adjustments for 152tiles page */
+@media (max-width: 768px) {
+    .tiles-152-main {
+        padding-top: 100px; /* Push image down on mobile to avoid hamburger menu */
+    }
+}
+
 .tiles-152-image {
     max-width: 100%;
     height: auto;
