@@ -447,7 +447,7 @@ body {
     
     /* Index page specific - no extra spacing */
     .index-page .header {
-        margin-bottom: 0px !important;
+        margin-bottom: 15px !important;
         padding-top: 50px !important;
     }
     
