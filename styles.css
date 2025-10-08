@@ -180,6 +180,18 @@ body {
     flex-wrap: wrap;
 }
 
+/* Index page specific desktop adjustments */
+@media (min-width: 769px) {
+    .index-page .logo-section {
+        flex: 0 0 400px !important;
+        margin-right: 120px !important;
+    }
+    
+    .index-page .instruction {
+        font-size: 32px !important;
+    }
+}
+
 .logo-section {
     flex: 1;
     min-width: 300px;
