@@ -1878,7 +1878,7 @@
 
 .the-object-page .object-bullets li:before {
     content: "•";
-    color: #d32f2f;
+    color: #000000;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -1983,7 +1983,7 @@
 
 .annual-card-bullets li:before {
     content: "•";
-    color: #d32f2f;
+    color: #000000;
     font-weight: bold;
     position: absolute;
     left: 0;
