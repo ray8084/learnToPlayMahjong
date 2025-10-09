@@ -219,6 +219,23 @@
 
 
 /* Responsive Design */
+@media (max-width: 900px) {
+    .popculture-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .popculture-page .left-column,
+    .popculture-page .right-column {
+        width: 100%;
+        flex: none;
+    }
+    
+    .popculture-main {
+        padding: 80px 20px 0 20px; /* Add top padding to avoid hamburger menu */
+    }
+}
+
 @media (max-width: 768px) {
     .user-menu {
         top: 15px;
@@ -2123,15 +2140,19 @@
 
 @media (max-width: 768px) {
     .bams-main {
-        padding: 20px 10px;
+        padding: 80px 10px 20px 10px; /* Add top padding to avoid hamburger menu */
     }
     
     .bams-content {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px; /* Subtle spacing for single column layout */
     }
     
-    .bams-page .left-column,
+    .bams-page .left-column {
+        flex: none;
+        width: 100%;
+    }
+    
     .bams-page .right-column {
         flex: none;
         width: 100%;
@@ -2257,10 +2278,20 @@
         gap: 20px;
     }
     
-    .onebam-page .left-column,
+    .onebam-page .left-column {
+        flex: none;
+        width: 50%; /* Make image take only half width on mobile */
+        align-self: center; /* Center the image */
+    }
+    
     .onebam-page .right-column {
         flex: none;
         width: 100%;
+    }
+    
+    .onebam-tile-image {
+        width: 100%;
+        max-width: 200px; /* Limit maximum size */
     }
     
     .onebam-bullets li {
