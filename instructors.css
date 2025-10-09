@@ -2303,6 +2303,120 @@
     }
 }
 
+/* Craks page styles */
+.craks-page {
+    background-color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.craks-main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.craks-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.craks-page .left-column {
+    flex: 0 0 50%;
+    min-width: 300px;
+}
+
+.craks-page .right-column {
+    flex: 0 0 50%;
+}
+
+.craks-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.craks-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.craks-bullets li {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.craks-bullets li:before {
+    content: "•";
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.craks-page .footer {
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.craks-page .footer-buttons {
+    gap: 10px;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+}
+
+.craks-page .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 30px 40px 30px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .craks-main {
+        padding: 80px 10px 20px 10px; /* Add top padding to avoid hamburger menu */
+    }
+    
+    .craks-content {
+        flex-direction: column;
+        gap: 15px; /* Subtle spacing for single column layout */
+    }
+    
+    .craks-page .left-column {
+        flex: none;
+        width: 100%;
+    }
+    
+    .craks-page .right-column {
+        flex: none;
+        width: 100%;
+    }
+    
+    .craks-bullets li {
+        font-size: 18px;
+    }
+    
+    .craks-page .button-container {
+        padding: 15px 20px 30px 20px;
+    }
+}
+
 /* TheObject page fine print styling */
 .the-object-page .fine-print {
     margin-top: 20px;
