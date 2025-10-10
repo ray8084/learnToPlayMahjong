@@ -2560,10 +2560,18 @@
     color: #d32f2f;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-top: 0;
     text-align: center;
     text-shadow: 2px 2px 0px #000000;
+}
+
+.tiletime-title-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #000000;
+    margin: 0 auto 40px auto;
+    max-width: 400px;
 }
 
 .tiletime-content {
@@ -2574,12 +2582,12 @@
 }
 
 .tiletime-page .left-column {
-    flex: 0 0 25%;
-    min-width: 200px;
+    flex: 0 0 40%;
+    min-width: 300px;
 }
 
 .tiletime-page .right-column {
-    flex: 0 0 75%;
+    flex: 0 0 60%;
     align-self: flex-start;
     margin-top: 0 !important;
     padding-top: 0 !important;
