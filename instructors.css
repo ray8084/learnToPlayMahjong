@@ -2684,6 +2684,120 @@
     }
 }
 
+/* Dragons page styles */
+.dragons-page {
+    background-color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.dragons-main {
+    padding: 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dragons-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #d32f2f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.dragons-title-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #000000;
+    margin: 0 auto 40px auto;
+    max-width: 400px;
+}
+
+.dragons-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start !important;
+    margin-bottom: 40px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.dragons-page .left-column {
+    flex: 0 0 40%;
+    align-self: flex-start;
+}
+
+.dragons-page .right-column {
+    flex: 0 0 60%;
+    align-self: flex-start;
+}
+
+.dragons-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.dragons-page .footer {
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.dragons-page .footer-buttons {
+    gap: 10px;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+}
+
+.dragons-page .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 30px 40px 30px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .dragons-main {
+        padding: 80px 10px 20px 10px; /* Add top padding to avoid hamburger menu */
+    }
+    
+    .dragons-title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    
+    .dragons-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .dragons-page .left-column {
+        flex: none;
+        width: 100%;
+    }
+    
+    .dragons-page .right-column {
+        flex: none;
+        width: 100%;
+    }
+    
+    .dragons-page .button-container {
+        padding: 15px 20px 30px 20px;
+    }
+}
+
 /* TheObject page fine print styling */
 .the-object-page .fine-print {
     margin-top: 20px;
