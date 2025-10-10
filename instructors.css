@@ -2438,18 +2438,27 @@
 }
 
 .dots-page .left-column {
-    flex: 0 0 50%;
-    min-width: 300px;
+    flex: 0 0 40%;
+    min-width: 250px;
 }
 
 .dots-page .right-column {
-    flex: 0 0 50%;
+    flex: 0 0 60%;
 }
 
 .dots-image {
     width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+.dots-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .dots-bullets {
