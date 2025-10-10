@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dots - Modern Mahjong</title>
+    <title>Tile Time - Modern Mahjong</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="instructors.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,11 +100,11 @@
         };
         
         window.nextPage = function() {
-            window.location.href = 'tiletime.html';
+            window.location.href = 'index.html';
         };
         
         window.previousPage = function() {
-            window.location.href = 'craks.html';
+            window.location.href = 'dots.html';
         };
         
         // Hamburger menu toggle function
@@ -130,7 +130,7 @@
         });
     </script>
 </head>
-<body class="dots-page">
+<body class="tiletime-page">
     <!-- Hamburger Menu -->
     <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleHamburgerMenu()">
@@ -167,21 +167,23 @@
         </div>
     </div>
 
-    <div class="dots-main">
-        <div class="dots-container">
-            <div class="dots-content">
-                <!-- Left Column: Dots Image -->
+    <div class="tiletime-main">
+        <div class="tiletime-container">
+            <!-- Title across the top -->
+            <h1 class="tiletime-title">TILE TIME</h1>
+            
+            <div class="tiletime-content">
+                <!-- Left Column: Tile Time Image -->
                 <div class="left-column">
-                    <img src="dotsimage.png" alt="Dots" class="dots-image">
+                    <img src="tiletimeimage.png" alt="Tile Time" class="tiletime-image">
                 </div>
                 
-                <!-- Right Column: Dots Text -->
+                <!-- Right Column: Tile Time Text -->
                 <div class="right-column">
-                    <p class="dots-title"><strong>Images of dots, circles or balls.</strong></p>
-                    <ul class="dots-bullets">
-                        <li>Dots are one of the three suits. Dots are sometimes called coins or circles.</li>
-                        <li>The Dots tiles have circles on them. Most sets have blue circles but some have red or green.</li>
-                        <li>Dots are represented by a number 1 through 9 on the card. As shown, there are four of each number Dot tile.</li>
+                    <ul class="tiletime-bullets">
+                        <li>Your turn for Tile Time! If you do not have a set of tiles, you can use the tiles sent in the PDF. If you haven't cut them out yet, please pause the video and then resume.</li>
+                        <li>Arrange one of each tile in increasing order (one through nine) for each of the three suits (Bam, Crak, and Dot).</li>
+                        <li>Remember - the One Bam often looks like a bird. If you have a set and are not sure which tile is your One Bam, feel free to email us at ModernMahjong@gmail.com.</li>
                     </ul>
                 </div>
             </div>

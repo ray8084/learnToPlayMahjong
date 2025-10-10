@@ -2540,6 +2540,139 @@
     }
 }
 
+/* Tile Time page styles */
+.tiletime-page {
+    background-color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.tiletime-main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tiletime-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #d32f2f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    margin-top: 0;
+    text-align: center;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.tiletime-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start !important;
+    margin-bottom: 40px;
+}
+
+.tiletime-page .left-column {
+    flex: 0 0 25%;
+    min-width: 200px;
+}
+
+.tiletime-page .right-column {
+    flex: 0 0 75%;
+    align-self: flex-start;
+}
+
+.tiletime-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.tiletime-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tiletime-bullets li {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.tiletime-bullets li:before {
+    content: "•";
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.tiletime-page .footer {
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.tiletime-page .footer-buttons {
+    gap: 10px;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+}
+
+.tiletime-page .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 30px 40px 30px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .tiletime-main {
+        padding: 80px 10px 20px 10px; /* Add top padding to avoid hamburger menu */
+    }
+    
+    .tiletime-title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    
+    .tiletime-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .tiletime-page .left-column {
+        flex: none;
+        width: 100%;
+    }
+    
+    .tiletime-page .right-column {
+        flex: none;
+        width: 100%;
+    }
+    
+    .tiletime-bullets li {
+        font-size: 18px;
+    }
+    
+    .tiletime-page .button-container {
+        padding: 15px 20px 30px 20px;
+    }
+}
+
 /* TheObject page fine print styling */
 .the-object-page .fine-print {
     margin-top: 20px;
