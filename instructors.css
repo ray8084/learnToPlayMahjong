@@ -2417,6 +2417,120 @@
     }
 }
 
+/* Dots page styles */
+.dots-page {
+    background-color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.dots-main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dots-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.dots-page .left-column {
+    flex: 0 0 50%;
+    min-width: 300px;
+}
+
+.dots-page .right-column {
+    flex: 0 0 50%;
+}
+
+.dots-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.dots-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dots-bullets li {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.dots-bullets li:before {
+    content: "•";
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.dots-page .footer {
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.dots-page .footer-buttons {
+    gap: 10px;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+}
+
+.dots-page .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 30px 40px 30px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .dots-main {
+        padding: 80px 10px 20px 10px; /* Add top padding to avoid hamburger menu */
+    }
+    
+    .dots-content {
+        flex-direction: column;
+        gap: 15px; /* Subtle spacing for single column layout */
+    }
+    
+    .dots-page .left-column {
+        flex: none;
+        width: 100%;
+    }
+    
+    .dots-page .right-column {
+        flex: none;
+        width: 100%;
+    }
+    
+    .dots-bullets li {
+        font-size: 18px;
+    }
+    
+    .dots-page .button-container {
+        padding: 15px 20px 30px 20px;
+    }
+}
+
 /* TheObject page fine print styling */
 .the-object-page .fine-print {
     margin-top: 20px;
