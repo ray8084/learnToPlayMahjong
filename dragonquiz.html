@@ -99,13 +99,6 @@
             dropdown.classList.toggle('show');
         };
         
-        window.nextPage = function() {
-            window.location.href = 'index.html';
-        };
-        
-        window.previousPage = function() {
-            window.location.href = 'dragons.html';
-        };
         
         // Hamburger menu toggle function
         window.toggleHamburgerMenu = function() {
@@ -226,5 +219,15 @@
             <button onclick="signup()">Sign Up</button>
         </div>
     </div>
+
+    <script>
+        function nextPage() {
+            window.location.href = 'dragonanswers.html';
+        }
+        
+        function previousPage() {
+            window.location.href = 'dragons.html';
+        }
+    </script>
 </body>
 </html>
