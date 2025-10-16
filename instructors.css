@@ -2945,3 +2945,126 @@
         margin-bottom: 10px;
     }
 }
+
+/* Dragon Quiz page styles */
+.dragonquiz-page .dragonquiz-main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dragonquiz-page .dragonquiz-container {
+    max-width: 100%;
+}
+
+.dragonquiz-page .dragonquiz-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #dc2626;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-align: center;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.dragonquiz-page .dragonquiz-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.dragonquiz-page .quiz-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.dragonquiz-page .quiz-question {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    flex-shrink: 0;
+    min-width: 200px;
+    text-align: right;
+}
+
+.dragonquiz-page .tiles-row {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.dragonquiz-page .tiles-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.dragonquiz-page .footer {
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.dragonquiz-page .footer-buttons {
+    gap: 10px;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+}
+
+.dragonquiz-page .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 30px 40px 30px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .dragonquiz-page .dragonquiz-main {
+        padding: 80px 10px 20px 10px;
+    }
+    
+    .dragonquiz-page .dragonquiz-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .dragonquiz-page .quiz-question {
+        font-size: 20px;
+    }
+    
+    .dragonquiz-page .dragonquiz-content {
+        gap: 30px;
+    }
+    
+    .dragonquiz-page .quiz-section {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .dragonquiz-page .quiz-question {
+        min-width: auto;
+        font-size: 20px;
+    }
+    
+    .dragonquiz-page .tiles-row {
+        width: 100%;
+    }
+    
+    .dragonquiz-page .button-container {
+        padding: 15px 20px 30px 20px;
+    }
+}
