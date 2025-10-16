@@ -2691,54 +2691,44 @@
     padding: 20px;
 }
 
-.dragons-main {
-    padding: 20px 20px;
+.dragons-page .dragons-main {
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.dragons-title {
+.dragons-page .dragons-title {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 48px;
     color: #d32f2f;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 0;
-    margin-top: 0;
-    text-align: center;
+    margin-bottom: 10px;
+    text-align: left;
     text-shadow: 2px 2px 0px #000000;
 }
 
-.dragons-title-bar {
-    width: 100%;
-    height: 4px;
-    background-color: #000000;
-    margin: 0 auto 40px auto;
-    max-width: 400px;
-}
-
-.dragons-content {
+.dragons-page .dragons-content {
     display: flex;
-    gap: 30px;
-    align-items: flex-start !important;
-    margin-bottom: 40px;
-    margin-top: 0;
-    padding-top: 0;
+    gap: 40px;
+    align-items: flex-start;
 }
 
 .dragons-page .left-column {
-    flex: 0 0 40%;
-    align-self: flex-start;
+    flex: 1;
+    max-width: 400px;
 }
 
 .dragons-page .right-column {
-    flex: 0 0 60%;
-    align-self: flex-start;
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-.dragons-image {
+.dragons-page .dragons-image {
     width: 100%;
+    max-width: 500px;
     height: auto;
     border-radius: 8px;
 }
@@ -2872,8 +2862,86 @@
     justify-content: flex-end;
 }
 
+/* Dragons page styles */
+.dragons-page .dragons-intro {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    padding: 20px 0;
+    line-height: 1.4;
+}
+
+.dragons-page .dragons-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dragons-page .dragons-bullets li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.dragons-page .dragons-bullets li::before {
+    content: "•";
+    color: #000;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+.dragons-page .dragons-bullets .red-dragon {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.dragons-page .dragons-bullets .red-dragon::before {
+    color: #000;
+}
+
+.dragons-page .dragons-bullets .green-dragon {
+    color: #2d5016;
+    font-weight: 600;
+}
+
+.dragons-page .dragons-bullets .green-dragon::before {
+    color: #000;
+}
+
+.dragons-page .dragons-bullets .white-dragon {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+.dragons-page .dragons-bullets .white-dragon::before {
+    color: #000;
+}
+
+.dragons-page .dragon-inline-image {
+    height: 50px;
+    width: auto;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
 @media (max-width: 768px) {
     .tiles-152-page .button-container {
         padding: 15px 20px 30px 20px;
+    }
+    
+    .dragons-page .dragons-intro {
+        font-size: 16px;
+        padding: 15px 0;
+    }
+    
+    .dragons-page .dragons-bullets li {
+        font-size: 15px;
+        margin-bottom: 10px;
     }
 }
