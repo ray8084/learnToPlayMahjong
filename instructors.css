@@ -3068,3 +3068,140 @@
         padding: 15px 20px 30px 20px;
     }
 }
+
+/* Dragon Answers Page Styles */
+.dragonanswers-page .dragonanswers-main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dragonanswers-page .dragonanswers-container {
+    max-width: 100%;
+}
+
+
+.dragonanswers-page .dragonanswers-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.dragonanswers-page .dragon-answer-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dragonanswers-page .dragon-tile {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dragonanswers-page .dragon-tile-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.dragonanswers-page .dragon-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.dragonanswers-page .dragon-match-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.dragonanswers-page .suit-tiles {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dragonanswers-page .suit-tiles-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px;
+    border-radius: 8px;
+}
+
+.dragonanswers-page .footer {
+    text-align: right !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.dragonanswers-page .footer-buttons {
+    gap: 10px;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+}
+
+.dragonanswers-page .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 30px 40px 30px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .dragonanswers-page .dragonanswers-main {
+        padding: 80px 10px 20px 10px;
+    }
+
+
+    .dragonanswers-page .dragon-answer-section {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .dragonanswers-page .dragon-tile {
+        width: 100px;
+        height: 100px;
+    }
+
+    .dragonanswers-page .dragon-tile-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .dragonanswers-page .dragon-match-text {
+        font-size: 20px;
+    }
+
+    .dragonanswers-page .dragonanswers-content {
+        gap: 30px;
+    }
+
+        .dragonanswers-page .button-container {
+            padding: 15px 20px 30px 20px;
+        }
+    }
+
