@@ -46,55 +46,9 @@
             </div>
         </div>
 
-        <!-- Main Content -->
-        <section class="instructors-main">
-            <div class="instructors-container">
-                <h1 class="page-title">MEET THE INSTRUCTORS AND CO-AUTHORS</h1>
-                <div class="title-line"></div>
-                
-                <!-- Dara Mosher Collins -->
-                <div class="instructor-section">
-                    <div class="instructor-content">
-                        <div class="instructor-text">
-                            <h2>Dara Mosher Collins</h2>
-                            <p><strong>Mah Jongg and Canasta co-author and instructor</strong></p>
-                            <p>Dara grew up in New York listening to the sounds of her mom, Phyllis, and friends mixing Mah Jongg tiles. While taking a break from law to raise their two daughters, Dara co-created a thriving Mah Jongg business with Donna Kassman. They have an online retail business, ModernMahjong.com, as well as host in-person events and Modern Mahjong Zoom Talks with well-known authors, speakers, teachers, players, and collectors. As the co-creator of MahjongCommunity, an interactive Facebook group with 88,000 active members, Dara creates and shares rule and strategy posts and moderates lively discussions. This led to writing their book, Visual Companion Guide for American Mah Jongg, available on Amazon.</p>
-                            
-                            <p>Dara co-wrote Modern American Canasta: The Complete Guide with Donna Miller-Small (another Donna). Dara has been a guest speaker and teacher both in-person and virtually for local and national organizations including Hadassah, JCCs, Country Clubs, Community Centers, and AARP and available to speak on learning to play and strategy for mahjong and Canasta. In October 2025, Dara is co-hosting a Modern American Canasta Convention October 11-12, 2025 in NYC and a Miraval retreat in August 2026.</p>
-                        </div>
-                        <div class="instructor-image">
-                            <img src="dara.png" alt="Dara Mosher Collins" class="instructor-photo">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Donna Kassman -->
-                <div class="instructor-section">
-                    <div class="instructor-content donna-content">
-                        <div class="instructor-text">
-                            <h2>Donna Kassman</h2>
-                            <p><strong>Mah Jongg - co-author and instructor</strong></p>
-                            <p>Donna Miller Kassman is a native South Floridian, born in Miami Beach. She attended college at the American University in Washington, D.C. After graduating from the University of Miami Law School, Donna practiced commercial real estate law for over twenty years. While raising two young boys, she took some time off from the practice of law during which time she learned how to play mahjong.</p>
-                            
-                            <p>After starting a mahjong business with Dara Mosher Collins, she never went back to the law! In addition to their online retail business, ModernMahjong.com, they host in-person events and Modern Mahjong Zoom Talks with well-known authors, speakers, teachers, players, and collectors. Replays of their informative and entertaining talks can be viewed on YouTube.com/ModernMahjong.</p>
-                        </div>
-                        <div class="instructor-image">
-                            <img src="donna.png" alt="Donna Kassman" class="instructor-photo">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Joint Efforts -->
-                <div class="joint-efforts">
-                    <p>Together, Dara and Donna host events, teach mah jongg, and organizers fundraisers throughout South Florida and beyond. Through their fundraising efforts, they have raised over $168,000 for the Alzheimer's Association and thousands of dollars for many other charities. You may have seen them talking about Mah Jongg with Savannah and Jenna at the Today Show plaza!</p>
-                </div>
-
-                <!-- Contact Information Section -->
-                <div class="contact-section">
-                    <p>For more information, please email us at ModernAmericanCanasta@gmail.com or ModernMahjong@gmail.com.</p>
-                </div>
-
-            </div>
+        <!-- Main Instructors Banner -->
+        <section class="main-banner">
+            <img src="instructors.png" alt="MODERN Mahjong Instructors" class="promotional-banner">
         </section>
 
         <!-- Footer Section -->
@@ -105,12 +59,6 @@
                         <source src="ElevenLabs_2025-10-06T15_23_56_Rachel_pre_sp100_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <audio id="mobileAudioPlayer" preload="metadata" class="mobile-audio">
-                        <source src="ElevenLabs_2025-10-06T15_23_56_Rachel_pre_sp100_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <button id="playPauseBtn" class="play-pause-btn">▶</button>
-                    <span id="timeDisplay" class="time-display">0:00</span>
                 </div>
                 <div class="footer-buttons">
                     <button class="back-btn" onclick="goBack()">Back</button>
@@ -346,56 +294,6 @@
             }
         });
 
-        // Minimal audio player functionality for mobile
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileAudio = document.getElementById('mobileAudioPlayer');
-            const playPauseBtn = document.getElementById('playPauseBtn');
-            const timeDisplay = document.getElementById('timeDisplay');
-
-            // Only initialize if elements exist (mobile)
-            if (mobileAudio && playPauseBtn && timeDisplay) {
-                // Format time as MM:SS
-                function formatTime(seconds) {
-                    const mins = Math.floor(seconds / 60);
-                    const secs = Math.floor(seconds % 60);
-                    return mins + ':' + (secs < 10 ? '0' : '') + secs;
-                }
-
-                // Update time display
-                function updateTime() {
-                    timeDisplay.textContent = formatTime(mobileAudio.currentTime);
-                }
-
-                // Play/pause functionality
-                playPauseBtn.addEventListener('click', function() {
-                    if (mobileAudio.paused) {
-                        mobileAudio.play();
-                        playPauseBtn.classList.remove('playing');
-                        playPauseBtn.classList.add('playing');
-                    } else {
-                        mobileAudio.pause();
-                        playPauseBtn.classList.remove('playing');
-                    }
-                });
-
-                // Update button when audio state changes
-                mobileAudio.addEventListener('play', function() {
-                    playPauseBtn.classList.add('playing');
-                });
-
-                mobileAudio.addEventListener('pause', function() {
-                    playPauseBtn.classList.remove('playing');
-                });
-
-                // Update time display
-                mobileAudio.addEventListener('timeupdate', updateTime);
-
-                // Initialize time display
-                mobileAudio.addEventListener('loadedmetadata', function() {
-                    timeDisplay.textContent = formatTime(mobileAudio.duration);
-                });
-            }
-        });
 
     </script>
 </body>

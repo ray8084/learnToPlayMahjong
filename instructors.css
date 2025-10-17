@@ -1,3 +1,4 @@
+
 /* User Menu Styles */
 .user-menu {
     position: fixed;
@@ -83,7 +84,7 @@
 /* Instructors page specific styles */
 .instructors-main {
     margin: 0;
-    padding: 20px 30px 0 30px;
+    padding: 0;
 }
 
 .instructors-container {
