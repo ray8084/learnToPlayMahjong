@@ -5,6 +5,22 @@
     box-sizing: border-box;
 }
 
+/* Promotional Banner Styles */
+.main-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0 20px 0; /* Top margin to account for fixed hamburger menu */
+}
+
+.promotional-banner {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Hamburger Menu Styles */
 .hamburger-menu {
     position: fixed !important;
