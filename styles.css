@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 20px 0; /* Reduced top margin to bring image closer to navigation */
+    margin: 20px 0 5px 0; /* Reduced top and bottom margins for better spacing */
 }
 
 .promotional-banner {
