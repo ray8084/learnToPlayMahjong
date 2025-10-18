@@ -583,6 +583,13 @@
     justify-content: flex-end;
 }
 
+/* Index page specific button alignment */
+.index-page .footer-buttons {
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+    margin-right: 15px;
+}
+
 /* Before We Start page specific styles */
 .before-we-start-main {
     padding: 30px;
