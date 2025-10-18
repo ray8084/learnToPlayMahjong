@@ -364,10 +364,17 @@
         };
 
         window.loadTilesPage = function() {
-            // Close the hamburger menu
+            // Check if user is logged in
+            if (!currentUser) {
+                // Show login form if not logged in
+                window.showLoginForm();
+                return;
+            }
+            
+            // Close the hamburger menu dropdown using the proper class method
             const dropdown = document.getElementById('hamburgerDropdown');
             if (dropdown) {
-                dropdown.style.display = 'none';
+                dropdown.classList.remove('show');
             }
             
             // Set current image index to 152tiles (index 12)
