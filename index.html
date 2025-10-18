@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MODERN Mahjong - Learn to Play</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="instructors.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="index-page">
@@ -47,13 +48,16 @@
 
         <!-- Main Promotional Banner -->
         <section class="main-banner">
-            <img src="page1.png" alt="MODERN Mahjong - Learn to Play" class="promotional-banner">
+            <img id="mainImage" src="page1.png" alt="MODERN Mahjong - Learn to Play" class="promotional-banner">
         </section>
 
         <!-- Footer Section -->
         <footer class="footer">
             <div class="button-container">
-                <button class="login-btn" onclick="showLoginForm()">Log In</button>
+                <div class="footer-buttons">
+                    <button class="back-btn" onclick="goBack()">Back</button>
+                    <button class="login-btn" onclick="nextPage()">Next</button>
+                </div>
             </div>
         </footer>
     </div>
@@ -270,8 +274,8 @@
                 document.getElementById('userEmailDisplay').textContent = user.email;
                 document.querySelector('.login-btn').textContent = 'Next';
                 document.querySelector('.login-btn').onclick = function() {
-                    // Navigate to instructors page
-                    window.location.href = 'instructors.html';
+                    // Use the image cycling function
+                    window.nextPage();
                 };
             } else {
                 currentUser = null;
@@ -282,6 +286,38 @@
                 };
             }
         });
+
+        // Image cycling functionality
+        const images = [
+            { src: 'page1.png', alt: 'MODERN Mahjong - Learn to Play' },
+            { src: 'instructors.png', alt: 'MODERN Mahjong Instructors' },
+            { src: 'lessonplan.png', alt: 'MODERN Mahjong Lesson Plan' },
+            { src: 'loveit.png', alt: 'We Love It - MODERN Mahjong' },
+            { src: 'beforewestart.png', alt: 'Before We Start - MODERN Mahjong' }
+        ];
+        
+        let currentImageIndex = 0;
+        
+        function updateImage() {
+            const img = document.getElementById('mainImage');
+            const currentImage = images[currentImageIndex];
+            img.src = currentImage.src;
+            img.alt = currentImage.alt;
+        }
+        
+        window.nextPage = function() {
+            console.log('nextPage called, current index:', currentImageIndex);
+            console.log('Images array:', images);
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            console.log('new index:', currentImageIndex);
+            updateImage();
+            console.log('Image updated to:', images[currentImageIndex].src);
+        };
+        
+        window.goBack = function() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateImage();
+        };
     </script>
 </body>
 </html>
