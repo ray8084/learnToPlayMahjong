@@ -54,6 +54,12 @@
         <!-- Footer Section -->
         <footer class="footer">
             <div class="button-container">
+                <div class="audio-player" id="audioPlayer" style="display: none;">
+                    <audio id="audioElement" controls class="desktop-audio">
+                        <source src="ElevenLabs_2025-10-06T15_23_56_Rachel_pre_sp100_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
                 <div class="footer-buttons">
                     <button class="back-btn" onclick="goBack()">Back</button>
                     <button class="login-btn" onclick="nextPage()">Next</button>
@@ -153,7 +159,7 @@
                     currentUser = userCredential.user;
                     document.querySelector('.login-btn').textContent = 'Next';
                     document.querySelector('.login-btn').onclick = function() {
-                        window.location.href = 'instructors.html';
+                        window.nextPage();
                     };
                     window.closeAuthModal();
                 })
@@ -303,15 +309,31 @@
             const currentImage = images[currentImageIndex];
             img.src = currentImage.src;
             img.alt = currentImage.alt;
+            
+            // Show/hide back button based on current image
+            const backBtn = document.querySelector('.back-btn');
+            if (backBtn) {
+                if (currentImageIndex === 0) {
+                    backBtn.style.display = 'none';
+                } else {
+                    backBtn.style.display = 'block';
+                }
+            }
+            
+            // Show/hide audio controls only for instructors image (index 1)
+            const audioPlayer = document.getElementById('audioPlayer');
+            if (audioPlayer) {
+                if (currentImageIndex === 1) {
+                    audioPlayer.style.display = 'block';
+                } else {
+                    audioPlayer.style.display = 'none';
+                }
+            }
         }
         
         window.nextPage = function() {
-            console.log('nextPage called, current index:', currentImageIndex);
-            console.log('Images array:', images);
             currentImageIndex = (currentImageIndex + 1) % images.length;
-            console.log('new index:', currentImageIndex);
             updateImage();
-            console.log('Image updated to:', images[currentImageIndex].src);
         };
         
         window.goBack = function() {
@@ -321,23 +343,24 @@
 
         // Ensure buttons are set up correctly on page load
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Page loaded, setting up button handlers');
             const nextBtn = document.querySelector('.login-btn');
             const backBtn = document.querySelector('.back-btn');
             
             if (nextBtn) {
                 nextBtn.onclick = function() {
-                    console.log('Next button clicked directly');
                     window.nextPage();
                 };
             }
             
             if (backBtn) {
                 backBtn.onclick = function() {
-                    console.log('Back button clicked directly');
                     window.goBack();
                 };
             }
+            
+            
+            // Set initial button visibility
+            updateImage();
         });
     </script>
 </body>

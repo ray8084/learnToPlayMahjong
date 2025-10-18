@@ -590,6 +590,12 @@
     margin-right: 15px;
 }
 
+/* Hide only the progress bar, keep time displays */
+#audioElement::-webkit-media-controls-timeline {
+    display: none !important;
+}
+
+
 /* Before We Start page specific styles */
 .before-we-start-main {
     padding: 30px;
