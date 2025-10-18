@@ -19,7 +19,7 @@
             </div>
             <div class="hamburger-dropdown" id="hamburgerDropdown">
                 <a href="index.html">Home</a>
-                <a href="152tiles.html">Tiles</a>
+                <a href="#" onclick="loadTilesPage(); return false;">Tiles</a>
             </div>
         </div>
 
@@ -309,7 +309,13 @@
             { src: 'annualcard.png', alt: 'Annual Card - MODERN Mahjong' },
             { src: '152tiles.png', alt: '152 Tiles - MODERN Mahjong' },
             { src: 'bamsuit.png', alt: 'Bam Suit - MODERN Mahjong' },
-            { src: 'onebam.png', alt: 'One Bam - MODERN Mahjong' }
+            { src: 'onebam.png', alt: 'One Bam - MODERN Mahjong' },
+            { src: 'craksuit.png', alt: 'Crak Suit - MODERN Mahjong' },
+            { src: 'dotsuit.png', alt: 'Dot Suit - MODERN Mahjong' },
+            { src: 'tiletime.png', alt: 'Tile Time - MODERN Mahjong' },
+            { src: 'dragontiles.png', alt: 'Dragon Tiles - MODERN Mahjong' },
+            { src: 'dragonquiz.png', alt: 'Dragon Quiz - MODERN Mahjong' },
+            { src: 'dragonkey.png', alt: 'Dragon Key - MODERN Mahjong' }
         ];
         
         let currentImageIndex = 0;
@@ -348,6 +354,18 @@
         
         window.goBack = function() {
             currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateImage();
+        };
+
+        window.loadTilesPage = function() {
+            // Close the hamburger menu
+            const dropdown = document.getElementById('hamburgerDropdown');
+            if (dropdown) {
+                dropdown.style.display = 'none';
+            }
+            
+            // Set current image index to 152tiles (index 12)
+            currentImageIndex = 12;
             updateImage();
         };
 
