@@ -361,6 +361,9 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     white-space: nowrap;
+    width: 80px;
+    text-align: center;
+    text-shadow: none;
 }
 
 .login-btn:hover {
