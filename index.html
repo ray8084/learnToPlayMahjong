@@ -20,6 +20,7 @@
             <div class="hamburger-dropdown" id="hamburgerDropdown">
                 <a href="index.html">Home</a>
                 <a href="#" onclick="loadTilesPage(); return false;">Tiles</a>
+                <a href="#" onclick="loadReadingTheCardPage(); return false;">Reading the Card</a>
             </div>
         </div>
 
@@ -321,7 +322,8 @@
             { src: 'flowertiles.png', alt: 'Flower Tiles - MODERN Mahjong' },
             { src: 'zero.png', alt: 'Zero - MODERN Mahjong' },
             { src: 'jokers.png', alt: 'Jokers - MODERN Mahjong' },
-            { src: 'singlesandpairs.png', alt: 'Singles and Pairs - MODERN Mahjong' }
+            { src: 'singlesandpairs.png', alt: 'Singles and Pairs - MODERN Mahjong' },
+            { src: 'readingthecard.png', alt: 'Reading the Card - MODERN Mahjong' }
         ];
         
         let currentImageIndex = 0;
@@ -379,6 +381,25 @@
             
             // Set current image index to 152tiles (index 12)
             currentImageIndex = 12;
+            updateImage();
+        };
+
+        window.loadReadingTheCardPage = function() {
+            // Check if user is logged in
+            if (!currentUser) {
+                // Show login form if not logged in
+                window.showLoginForm();
+                return;
+            }
+            
+            // Close the hamburger menu dropdown using the proper class method
+            const dropdown = document.getElementById('hamburgerDropdown');
+            if (dropdown) {
+                dropdown.classList.remove('show');
+            }
+            
+            // Set current image index to readingthecard (index 27)
+            currentImageIndex = 27;
             updateImage();
         };
 
